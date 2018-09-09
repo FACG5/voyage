@@ -4,6 +4,7 @@ const handlebars = require('express-handlebars');
 const router = require('./controllers/index');
 const path = require('path');
 
+
 // handlebar options
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -14,7 +15,9 @@ app.engine('hbs', handlebars({
     defaultLayout: 'main',
 }));
 
+
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(router);
+
 
 module.exports = app;
