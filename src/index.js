@@ -6,5 +6,3 @@ const host = process.env.HOST || 'localhost';
 app.listen(PORT, () => {
     console.log(`the hostname ${host} on port ${PORT}`);
 });
-
-module.exports = app;
