@@ -2,17 +2,17 @@ const { Pool } = require('pg');
 const url = require('url');
 require('env2')('./config.env');
 
-let DB_URL = '';
+let dbUrl = '';
 
 if (process.env.NODE_ENV === 'test') {
-    DB_URL = process.env.TEST_DB_URL;
+    dbUrl = process.env.TEST_DB_URL;
 } else {
-    DB_URL = process.env.DB_URL;
+    dbUrl = process.env.DB_URL;
 }
 
-if (!DB_URL) throw new Error('Can not found the DB_URL!');
+if (!dbUrl) throw new Error('Can not found the DB_URL!');
 
-const params = url.parse(DB_URL);
+const params = url.parse(dbUrl);
 const [username, password] = params.auth.split(':');
 
 const options = {

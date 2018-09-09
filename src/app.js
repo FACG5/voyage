@@ -15,6 +15,8 @@ app.engine('hbs', handlebars({
     defaultLayout: 'main',
 }));
 
+app.set("port",process.env.PORT || 4000);
+
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(router);

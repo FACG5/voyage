@@ -1,10 +1,6 @@
 const app = require('./app');
 
-const PORT = process.env.PORT || 4000;
-const host = process.env.HOST || 'localhost';
 
-app.listen(PORT, () => {
-    console.log(`the hostname ${host} on port ${PORT}`);
+app.listen(app.get('port'), () => {
+    console.log('App on port' ,app.get('port'));
 });
-
-module.exports = app;
