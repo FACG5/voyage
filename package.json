@@ -1,0 +1,44 @@
+{
+  "name": "voyage",
+  "version": "1.0.0",
+  "description": "App to collect all entertainments places at Gaza",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG5/voyage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG5/voyage/issues"
+  },
+  "homepage": "https://github.com/FACG5/voyage#readme",
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "nodemon": "^1.18.4",
+    "path": "^0.12.7",
+    "tape": "^4.9.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "env2": "^2.2.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.12",
+    "istanbul": "^0.4.5",
+    "jsonwebtoken": "^8.3.0",
+    "pg": "^7.4.3",
+    "supertest": "^3.3.0"
+  }
+}

@@ -1,0 +1,5 @@
+
+
+exports.get = (req,res) =>{
+    res.render('home',{style : "style" , title : "Home" , name:"ahmad" });
+};
