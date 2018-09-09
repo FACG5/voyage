@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const handlebars = require('express-handlebars');
 const router = require('./controllers/index');
 const path = require('path');
