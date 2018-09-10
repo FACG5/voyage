@@ -4,8 +4,12 @@ const handlebars = require('express-handlebars');
 const router = require('./controllers/index');
 const path = require('path');
 
+const bodyParser = require('body-parser');
+
 
 // handlebar options
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars({
@@ -20,6 +24,7 @@ app.set("port",process.env.PORT || 4000);
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(router);
+
 
 
 module.exports = app;
