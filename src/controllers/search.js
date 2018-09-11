@@ -1,13 +1,12 @@
 const { getSearch } = require('../model/queries/get_data');
 
-exports.get = (req, response) => {
-  const data = req.body;
-  const name = data.name;
+exports.get = ((req, response) => {
+  const name = req.body.name;
   getSearch(name)
-    .then((res) => {
+    .then(() => {
       response.render('index');
     })
-    .catch((error) => {
+    .catch(() => {
       response.send('error');
     });
-};
+});

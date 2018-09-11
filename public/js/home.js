@@ -5,10 +5,9 @@ search.addEventListener('input', () => {
   const data = {
     name: search.value,
   };
-  console.log(data);
   fetch('/', {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    credentials: 'same-origin', // include, same-origin, *omit
+    credentials: 'same-origin', // credentials are HTTP cookies, TLS client certificates, and authentication entries (for HTTP authentication). [COOKIES] [TLS] [HTTP-AUTH].
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
     },
@@ -17,14 +16,12 @@ search.addEventListener('input', () => {
   })
     .then(response => response.json())
     .then((response) => {
-      // console.log(response[0])
       list.textContent = '';
       response.map((item) => {
-          const result = document.createElement('option');
-          result.textContent = item;
-          list.appendChild(result);
-          console.log(result);
+        const result = document.createElement('option');
+        result.textContent = item;
+        list.appendChild(result);
       });
     })
-    .catch(error => return(`error  : ${error}`));
+    .catch(error => (`error  : ${error}`));
 });

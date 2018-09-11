@@ -4,8 +4,7 @@ exports.get = (req, res) => {
   res.render('home', { style: 'style', title: 'Home', dom: 'home' });
 };
 
-exports.post = (req, res ,next) => {
-  // console.log(req.body.name);
+exports.post = (req, res) => {
   const search = req.body.name;
   getSearch(search)
     .then((response) => {
@@ -16,6 +15,5 @@ exports.post = (req, res ,next) => {
       });
       res.send(arr);
     })
-    .catch(err => res.send( 'Fild :'+ err));
-
+    .catch(err => res.send(`Fild : ${ err}`));
 };
