@@ -5,6 +5,7 @@ gray :  #E5E5E5
 blue :  #52C2E6
 yellow: #FFE603
 orange: #FCD271
+font-family: 'Inconsolata','Roboto Mono',  monospace;
 
  */
 
@@ -27,6 +28,21 @@ a:visited{
     color: #000000;
     text-decoration: none;
 }
+.header{
+    position: fixed;
+    top:0;
+}
+main{
+    margin-top: 100px;
+    font-family:'Inconsolata', monospace;
+    min-height: 500px;
+    padding: 10px 20px;
+}
+
+/*
+------    S m a l l       S c r e e n   -------   
+*/
+
 @media only screen and (max-width: 600px) {
  .header {
     width: 100%;
@@ -35,12 +51,11 @@ a:visited{
     min-height: 80px;
     background:#52C2E6 !important;
     color: #000000;
-    /* border-bottom: #000000 solid 2px; */
 }
 .header .logo{
     float: left;
     width:70%;
-    font-size: 40px;
+    font-size:18px;
     font-family: 'Pacifico', cursive;
 }
 .header .menu{
@@ -53,6 +68,7 @@ a:visited{
 }
 .header .menu .main-menu{
     display: none; 
+    font-family: 'Inconsolata', monospace;
     width: 200px;
     padding: 0px 0px 0px 10px;
     text-align: left;
@@ -62,33 +78,186 @@ a:visited{
 }
 .header .menu:hover .main-menu{
     display: block;
-    position: absolute;
+    
 }
-.minu-link{
+.menu-link{
     width: 100%;
     line-height: 1;
     padding-left:10px;
     font-size: 15px;
+    letter-spacing: 0.1px;
+    text-transform: capitalize;
     overflow: hidden;
     transition: all 0.5s;
 }
-.minu-link span{
+.menu-link span{
     display: inline-block;
-    margin-right:3%;
+    margin-right:4%;
 }
-.minu-link:hover{
-    text-indent: 8px;
+.menu-link:hover{
+    text-indent: 5px;
     color: rgb(78, 129, 146);
 }
 .footer {
     width: 100%;
-    min-height:150px;
+    min-height:130px;
     background: #000000;
     color: #ffffff;
     text-align: center;
-    padding-top:100px;
+    padding-top:60px;
     line-height: 2;
     text-transform: capitalize;
-    margin-top: 55%;
+    margin-top: 5%;
+    font-family: 'Inconsolata', monospace;
 }
 }
+
+/*
+    ------    M e d i u m       S c r e e n   -------   
+*/ 
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .header {
+       width: 100%;
+       padding:0px 20px 0px 20px;
+       max-height: 80px;
+       min-height: 80px;
+       background:#52C2E6 !important;
+       color: #000000;
+   }
+   .header .logo{
+       float: left;
+       font-weight: normal;
+       width:80%;
+       padding-left:5%;
+       font-size: 20px;
+       font-family: 'Pacifico', cursive;
+   }
+   .header .menu{
+       font-size: 30px;
+       cursor: pointer;
+       position: relative; 
+       width: 20%;
+       text-align: center;
+       margin-top: 5%;
+   }
+   .header .menu .main-menu{
+       display: none; 
+       width: 300px;
+       padding: 0px 0px 0px 10px;
+       text-align: left;
+       background: rgba(0,0,0,0.1);
+       position: absolute;
+       font-family: 'Inconsolata', monospace;
+       z-index: 9999;
+   }
+   .header .menu:hover .main-menu{
+       display: block;
+       position: absolute;
+       padding-left:10px;
+   }
+   .menu-link{
+       width: 100%;
+       line-height: 1;
+       padding-left:25px;
+       text-transform: capitalize;
+       font-size: 16px;
+       transition: all 0.5s;
+   }
+   .menu-link span{
+       display: inline-block;
+       margin-right:4%;
+   }
+   .menu-link:hover{
+       text-indent: 7px;
+       color: rgb(78, 129, 146);
+   }
+.footer {
+       width: 100%;
+       min-height:130px;
+       background: #000000;
+       color: #ffffff;
+       text-align: center;
+       padding-top:60px;
+       line-height: 2;
+       text-transform: capitalize;
+       margin-top: 5%;
+       font-family: 'Inconsolata', monospace;
+   }
+   }
+
+   /*
+   ------    L a r g e       S c r e e n   -------   
+   */ 
+
+@media (min-width: 901px) and (max-width: 1700px) {
+    .header {
+       width: 100%;
+       padding:0px 20px 0px 20px;
+       max-height: 80px;
+       min-height: 80px;
+       background:#52C2E6 !important;
+       color: #000000;
+    }
+   .header .logo{
+       float: left;
+       font-weight: normal;
+       width:80%;
+       padding-left:5%;
+       font-size: 20px;
+       font-family: 'Pacifico', cursive;
+   }
+   .header .menu{
+       font-size: 30px;
+       cursor: pointer;
+       position: relative; 
+       width: 20%;
+       text-align: center;
+       margin-top: 2%;
+   }
+   .header .menu .main-menu{
+       display: none; 
+       width: 300px;
+       font-family: 'Inconsolata', monospace;
+       padding: 0px 0px 0px 10px;
+       text-align: left;
+       background: rgba(0,0,0,0.1);
+       position: absolute;
+       z-index: 9999;
+   }
+   .header .menu:hover .main-menu{
+       display: block;
+       position: absolute;
+       padding-left:25px;
+   }
+   .menu-link{
+       width: 100%;
+       line-height: 1;
+       padding-left:25px;
+       letter-spacing: 0.5px;
+       text-transform: capitalize;
+       font-size: 17px;
+       overflow: hidden;
+       transition: all 0.5s;
+   }
+   .menu-link span{
+       display: inline-block;
+       margin-right:5%;
+   }
+   .menu-link:hover{
+       text-indent: 8px;
+       color: rgb(78, 129, 146);
+   }
+   .footer {
+       width: 100%;
+       min-height:150px;
+       background: #000000;
+       color: #ffffff;
+       text-align: center;
+       padding-top:90px;
+       line-height: 2;
+       text-transform: capitalize;
+       margin-top: 5%;
+       font-family: 'Inconsolata', monospace;
+   }
+   }
