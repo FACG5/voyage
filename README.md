@@ -15,7 +15,7 @@ It will also support and market recreational venues.
   - I have a profile page.
   - I can view all places in Gaza
   - I can add a review of entertainment places.
-  - I can add a rate this place.
+  - I can rate this place.
   - I can add a comment for other reviews.
   - I can view other profiles.
 
