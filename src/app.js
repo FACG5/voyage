@@ -3,9 +3,10 @@ const app = express();
 const handlebars = require('express-handlebars');
 const router = require('./controllers/index');
 const path = require('path');
+const bodyParser = require('body-parser')
 
-
-// handlebar options
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs', handlebars({
