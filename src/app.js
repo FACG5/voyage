@@ -15,6 +15,7 @@ app.engine('hbs', handlebars({
   partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
 }));
+
 app.set('port', process.env.PORT || 4000);
 
 app.use(bodyParser.json());

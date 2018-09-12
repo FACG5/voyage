@@ -13,4 +13,6 @@ const checkUser = email => new Promise((resolve, reject) => {
   });
 });
 
-module.exports = { checkUser };
+module.exports = {
+  checkUser,
+};
