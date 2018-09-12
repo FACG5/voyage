@@ -1,6 +1,6 @@
 const { sign } = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const { checkUser } = require('../model/queries/get_data');
+const { checkUser } = require('../model/queries/get_data_users');
 
 exports.get = (req, res) => {
   res.render('sign_in', { style: 'style', dom: 'sign_in', title: 'sign in' });
