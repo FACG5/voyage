@@ -1,12 +1,13 @@
-const { getSearch, getReviews } = require('../model/queries/get_data');
+const { getSearch } = require('../model/queries/business');
+const { getReviews } = require('../model/queries/review');
 
 exports.get = (req, res) => {
   res.render('home', { style: 'style', title: 'Home', dom: 'home' });
 };
 
 exports.post = (req, res) => {
-  const search = req.body.name;
-  getSearch(search)
+  const { name } = req.body;
+  getSearch(name)
     .then((response) => {
       const arr = [];
       response.filter((item) => {
