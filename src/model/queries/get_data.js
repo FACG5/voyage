@@ -7,7 +7,7 @@ const checkUser = email => new Promise((resolve, reject) => {
   };
   dbConnection.query(sql, (error, res) => {
     if (error) {
-      return reject(new TypeError('Error in DB'));
+      return reject(new Error('Error in DB'));
     }
     return resolve(res.rows);
   });
