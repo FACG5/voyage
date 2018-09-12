@@ -1,9 +1,10 @@
 const express = require('express');
-
-const app = express();
 const handlebars = require('express-handlebars');
 const path = require('path');
+const bodyParser = require('body-parser');
+const router = require('./controllers');
 
+const app = express();
 
 // handlebar options
 app.set('views', path.join(__dirname, 'views'));
@@ -15,10 +16,6 @@ app.engine('hbs', handlebars({
   defaultLayout: 'main',
 }));
 app.set('port', process.env.PORT || 4000);
-
-
-const bodyParser = require('body-parser');
-const router = require('./controllers');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

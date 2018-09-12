@@ -5,9 +5,6 @@ const router = express.Router();
 const home = require('./home');
 const signUp = require('./sign_up');
 const signIn = require('./sign_in');
-const businessPage = require('./business_page');
-const userProfile = require('./user_profile');
-const error = require('./error');
 
 router.get('/', home.get); // router [/] Home Page
 

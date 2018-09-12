@@ -24,5 +24,5 @@ sendButton.addEventListener('click', () => {
       }
       messageError.textContent = response.err;
     })
-    .catch(error => console.error(error));
+    .catch((error) => { messageError.textContent = error; });
 });

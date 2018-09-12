@@ -11,8 +11,7 @@ exports.get = (req, res) => {
  * and the successful login create cookies
  */
 exports.post = (req, res, next) => {
-  const { email } = req.body;
-  const { password } = req.body;
+  const { email, password  } = req.body;
 
   checkUser(email)
     .then((request) => {
