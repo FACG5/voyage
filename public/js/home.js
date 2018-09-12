@@ -8,7 +8,7 @@ const list = document.getElementById('data');
 console.log(restaurant);
 restaurant.addEventListener('click', () => {
   window.location = '/categories/restaurant';
-  console.log('hello');
+
 });
 
 park.addEventListener('click', () => {

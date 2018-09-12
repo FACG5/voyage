@@ -4,9 +4,7 @@ exports.get = (req, res) => {
   const { category } = req.params;
   getCategories(category)
     .then((response) => {
-      console.log(res);
-      res.render('category', { response, style: 'style', title: category});
+      res.render('category', { response, style: 'category', title: category });
     })
-    .catch(err => console.log(`err : ${err}`));
-
+    .catch(err => res.send(`error : ${err}`));
 };
