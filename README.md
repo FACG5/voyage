@@ -1,8 +1,8 @@
 # voyage
 
 ### What is voyage ?!
-A web application that allows you to search and explore places of entertainment in Gaza and gives you the possibility to give your opinion in places after you register as a regular user on the site ..
-If you are the owner of an entertainment site and want to market it you can register as a business account and then you can view your services and receive views of people about the services and the place.
+A web application that allows you to search and explore places of entertainment in Gaza and gives you the possibility to give your opinion on places after you register as a regular user on the site ..
+If you are the owner of an entertainment site and want to market it you can register as a business account and then you can view your services and receive reviews of people about the services and the place.
 
 
 ### Why?!
