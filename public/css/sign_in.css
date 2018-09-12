@@ -1,0 +1,61 @@
+main {
+    height: 100vh;
+    background-color: #E5E5E5;
+}
+
+.sign-in {
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    width: 80%;
+    padding: 2%;
+    position: relative;
+    top: 20%;
+    border: none;
+    border-radius: 5px;
+}
+
+.text {
+    text-align: center;
+    margin: 5% auto;
+    mix-blend-mode: darken;
+}
+
+input, button {
+    position: relative;
+    display: block;
+    margin: 3% auto;
+    padding: 1%;
+    width: 90%;
+    height: 40px;
+}
+
+input {
+    border: 1px solid #52C2E6;
+    background-color: #E5E5E5;
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 5%;
+}
+
+button {
+    background-color: #56CCF2;
+    border: 1px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 15px;
+    text-align: center;
+    font-size: large;
+}
+
+.message, .link-sing-up {
+    position: relative;
+    display: block;
+    margin: 3% auto;
+    padding: 1%;
+    width: 90%;
+    color: #56CCF2;
+}
+
+.message {
+    text-align: center;
+    color: red;
+}
