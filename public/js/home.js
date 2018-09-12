@@ -1,7 +1,8 @@
 const search = document.getElementById('search');
 const list = document.getElementById('data');
 
-search.addEventListener('input', () => {
+search.addEventListener('input', (e) => {
+  e.preventDefault();
   const data = {
     name: search.value,
   };
@@ -23,5 +24,11 @@ search.addEventListener('input', () => {
         list.appendChild(result);
       });
     })
-    .catch(error => (`error  : ${error}`));
+    .catch(error => (alert (error +'There is ann Error in searching')));
 });
+
+const href = (window.location.href);
+const name = href.split('=')[1];
+if (name) {
+  window.location = `/business?name=${name}`;
+}

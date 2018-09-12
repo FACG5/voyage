@@ -12,5 +12,30 @@ const getSearch = name => new Promise((resolve, reject) => {
   });
 });
 
+const getSearchResult = name => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'SELECT * FROM business WHERE name =$1',
+    values: [name],
+  };
+  dbConnection.query(sql, (error, res) => {
+    if (error) return reject(error);
+    resolve(res.rows);
+  });
+});
 
-module.exports = { getSearch };
+const getReviews = () => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'SELECT * FROM review ORDER BY id desc',
+  };
+  dbConnection.query(sql, (error, res) => {
+    if (error) return reject(error);
+    resolve(res.rows);
+  });
+});
+
+
+module.exports = {
+  getSearch,
+  getSearchResult,
+  getReviews,
+};
