@@ -3,7 +3,8 @@ const bcrypt = require('bcrypt');
 const { checkUser } = require('../model/queries/get_data');
 
 exports.get = (req, res) => {
-  res.render('sign_in', { style: 'style', dom: 'sign_in', title: 'sign in' });
+  res.render('sign_in', { style: 'style', dom: 'sign_in', title: 'sign in', style_special
+      : 'sign_in' });
 };
 /**
  * check out if the email is exist
