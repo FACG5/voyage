@@ -1,11 +1,26 @@
 const { getSearch } = require('../model/queries/business');
 const { getReviews } = require('../model/queries/review');
+const { getComments } = require('../model/queries/review');
 
-exports.get = (req, res) => {
-  res.render('home', { style: 'style', title: 'Home', dom: 'home' });
+exports.get = (req, res, next) => {
+  getReviews()
+    .then((response) => {
+      response.forEach((element) => {
+        getComments(element.id)
+          .then((resComment) => {
+            if (resComment.length !== 0) {
+              res.render('home', {
+                style: 'style', title: 'Home', dom: 'home', response, resComment,
+              });
+            }
+          })
+          .catch(err => res.send(`Fild : ${err}`));
+      });
+    })
+    .catch(err => next(err));
 };
 
-exports.post = (req, res) => {
+exports.post = (req, res, next) => {
   const { name } = req.body;
   getSearch(name)
     .then((response) => {
@@ -16,12 +31,5 @@ exports.post = (req, res) => {
       });
       res.send(arr);
     })
-    .catch(err => res.send(`Fild : ${ err}`));
-};
-
-exports.postReviews = (req, res) => {
-  const { review } = req.body.content; 
-  getReviews(review)
-    .then(res.send(review))
-    .catch(err => res.send(`Fild : ${ err}`));
+    .catch(err => next(err));
 };

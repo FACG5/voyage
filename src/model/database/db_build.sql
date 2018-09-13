@@ -54,6 +54,9 @@ INSERT INTO business (user_id, name, address, description, img, category) VALUES
 INSERT INTO review (person_id, business_id, content, evaluation) VALUES (1, 1, 'There are many variations of passages of Lorem ',4);
 
 INSERT INTO comment (person_id, review_id, content) VALUES (1, 1, 'WooW');
+INSERT INTO comment (person_id, review_id, content) VALUES (1, 1, 'Great');
+INSERT INTO comment (person_id, review_id, content) VALUES (1, 1, 'Bad');
+INSERT INTO comment (person_id, review_id, content) VALUES (1, 1, 'I Dont love it');
 
 INSERT INTO users (email, password, type) VALUES ('asmaa1@gmail.com','$2b$10$d0cyrUlOtl94wxL7wMcVjO24F3Ld6LqZqAVdugDfzlY/E2aGKm5Cq', 'person');
 
