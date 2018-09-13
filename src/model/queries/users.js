@@ -13,13 +13,14 @@ const checkUser = email => new Promise((resolve, reject) => {
   });
 });
 
-const addUser = (email, password, type) => new Promise((resolve, reject) => {
+const addUser = data => new Promise((resolve, reject) => {
+  const { email, password, type } = data;
   const sql = {
     text:
         'INSERT INTO users (email, password,type) VALUES ($1, $2, $3) RETURNING id ;',
-    values: [email, password, type]
+    values: [email, password, type],
   };
-  dbconnection.query(sql, (err, res) => {
+  dbConnection.query(sql, (err, res) => {
     if (err) {
       reject(err);
     } else {
@@ -29,5 +30,5 @@ const addUser = (email, password, type) => new Promise((resolve, reject) => {
 });
 
 module.exports = {
-  checkUser,addUser,
+  checkUser, addUser,
 };

@@ -22,13 +22,16 @@ const getSearchResult = name => new Promise((resolve, reject) => {
   });
 });
 
-const addBusiness = (user_id,name, address, description, img, category) => new Promise((resolve, reject) => {
+const addBusiness = (userId, data) => new Promise((resolve, reject) => {
+  const {
+    businessName, businessAddress, businessDescription, image, businessCategory,
+  } = data;
   const sql = {
     text:
         'INSERT INTO business (user_id,name,address,description,img , category) VALUES ($1, $2, $3,$4,$5,$6) ;',
-    values: [user_id,name, address, description, img, category],
+    values: [userId, businessName, businessAddress, businessDescription, image, businessCategory],
   };
-  dbconnection.query(sql, (err, res) => {
+  dbConnection.query(sql, (err, res) => {
     if (err) {
       reject(err);
     } else {

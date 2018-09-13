@@ -1,7 +1,8 @@
 /* global document */
 
 const displayErr = (errElem, errMsg) => {
-  errElem.textContent = errMsg;
+  const errorElement = errElem;
+  errorElement.textContent = errMsg;
 };
 
 const checkEmail = (emailContainer, errContainer) => {

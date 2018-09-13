@@ -1,12 +1,15 @@
-const dbconnection = require('../database/db_connection');
+const dbConnection = require('../database/db_connection');
 
-const addPerson = (user_id,username, first_name, last_name, birthday, gender) => new Promise((resolve, reject) => {
+const addPerson = (userId, data) => new Promise((resolve, reject) => {
+  const {
+    userName, fName, lName, birthDay, gender,
+  } = data;
   const sql = {
     text:
         'INSERT INTO person (user_id,username,first_name,last_name,birthday , gender) VALUES ($1, $2, $3,$4,$5,$6) ;',
-    values: [user_id,username, first_name, last_name, birthday, gender],
+    values: [userId, userName, fName, lName, birthDay, gender],
   };
-  dbconnection.query(sql, (err, res) => {
+  dbConnection.query(sql, (err, res) => {
     if (err) {
       reject(err);
     } else {
@@ -16,4 +19,4 @@ const addPerson = (user_id,username, first_name, last_name, birthday, gender) =>
 });
 
 
-module.exports = { addPerson }
+module.exports = { addPerson };
