@@ -1,7 +1,7 @@
 const hashPassword = require('./hashPassword');
-const { addUser } = require('../model/queries/post_data');
-const { addPerson } = require('../model/queries/post_data');
-const { addBusiness } = require('../model/queries/post_data');
+const { addUser } = require('../model/queries/users');
+const { addPerson } = require('../model/queries/person');
+const { addBusiness } = require('../model/queries/business');
 
 exports.get = (req, res) => {
   res.render('sign_up', {
@@ -32,9 +32,9 @@ exports.post = (request, response) => {
 
               addPerson(user_id, userName, fName, lName, birthDay, gender)
                 .then((res) => {
-                  response.render('sign_in', { dom: 'sign_in', msg: 'Person has been added successful' })
+                  res.render('sign_in', { dom: 'sign_in', msg: 'Person has been added successful' })
                 }).catch((err) => {
-                  response.render('sign_up', { dom: 'sign_up', msg: 'email is already exist' });
+                  res.render('sign_up', { dom: 'sign_up', msg: 'email is already exist' });
                 });
             } else if (type == 1) { // type = 1 represents business
               const { businessName } = data;
