@@ -1,3 +1,5 @@
+/* global document */
+/* global window */
 const getElement = id => document.getElementById(id);
 
 const email = getElement('input-email');
@@ -6,9 +8,9 @@ const sendButton = getElement('send-button');
 const messageError = getElement('message-error');
 
 const isEmpty = element => element.value.trim().toString().length === 0;
-const isValid = (email) => {
+const isValid = (emailValue) => {
   const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return regex.test(String(email).toLowerCase());
+  return regex.test(String(emailValue).toLowerCase());
 };
 
 sendButton.addEventListener('click', () => {
