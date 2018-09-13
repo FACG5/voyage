@@ -1,7 +1,7 @@
 const { getSearchResult } = require('../model/queries/business');
 const { getReviewsByBusiness } = require('../model/queries/review');
 
-exports.get = (req, res) => {
+exports.get = (req, res, next) => {
   const { name } = req.query;
   getSearchResult(name)
     .then((response) => {
@@ -24,19 +24,7 @@ exports.get = (req, res) => {
             category,
           });
         })
-        .catch(err => res.render('business_page', {
-          err,
-          style: 'style',
-          title: 'Error',
-          error_message: 'Error in get reviews',
-        }));
+        .catch(err => next(err));
     })
-    .catch((err) => {
-      res.render('business_page', {
-        err,
-        style: 'style',
-        title: 'Error',
-        error_message: 'Sorry the business not found',
-      });
-    });
+    .catch(err => next(err));
 };

@@ -1,3 +1,4 @@
+/* global document */
 const getElement = id => document.getElementById(id);
 
 const reviewsButton = getElement('reviews-button');
