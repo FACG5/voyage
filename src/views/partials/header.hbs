@@ -1,17 +1,30 @@
     <div class="header">
         <div class="logo">
             <a href="/">
-                <h1>voyage</h1
-            ></a>
+                <h1>voyage</h1></a>
         </div>
-        <div class="menu fas fa-bars">
-            <ul class="main-menu">
-                <a href="about_us" class="menu-link"><li class="menu-item"><span class="fas fa-question"></span> about us</li></a>
-                <a href="/contact_us" class="menu-link"><li class="menu-item"><span class="fas fa-comment-alt"></span>contact us</li></a>
-                <a href="/" class="menu-link"><li class="menu-item"><span class="fas fa-search"></span>search</li></a>
-                <a href="/sign_in" class="menu-link"><li class="menu-item"><span class="fas fa-sign-in-alt"></span>sign in</li></a>
-                <a href="/sign_up" class="menu-link"><li class="menu-item"><span  class="fas fa-user-plus"></span>sign up</li></a>
-            </ul>
+        <div class="sidebar">
+            <div id="sidebar">
+                <ul>
+                    <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
+                    <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
+                    <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
+                    <a href="/sign_in" class="sidebar-link"><li><span class="fas fa-sign-in-alt"></span>sign in</li></a>
+                    <a href="/sign_up" class="sidebar-link"><li><span  class="fas fa-user-plus"></span>sign up</li></a>
+                </ul>
+            </div>
+            <div id="toggle-btn" onclick="toggleSidebar(this)">
+                <span></span>
+                <span></span>
+                <span></span>
+        </div>
         </div>
     </div>
 
+<script>
+    function toggleSidebar(ref) {
+  ref.classList.toggle('active');
+  document.getElementById('sidebar').classList.toggle('active');
+}
+
+</script>

@@ -12,7 +12,7 @@ const getReviews = () => new Promise((resolve, reject) => {
 
 const getComments = reviewId => new Promise((resolve, reject) => {
   const sql = {
-    text: 'SELECT * FROM comment WHERE review_id=$1',
+    text: 'SELECT comment.id, comment.person_id, comment.review_id, comment.content, person.username FROM comment JOIN person on comment.person_id=person.id WHERE comment.review_id=$1',
     values: [reviewId],
   };
   dbConnection.query(sql, (error, res) => {

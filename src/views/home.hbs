@@ -15,14 +15,14 @@
                     <h3><a href="/business_page" >name business: {{name}}</a></h3>
                     <h3>evaluation: {{evaluation}}/5</h3>
                     <button id="{{id}}" class="button-comment">click mee</button>
+                     <hr>
                 {{/each}}
-                    <h3>comment : </h3>
+                 <h3>comment : </h3>
                     {{#each resComment}}
-                        <div id="{{id}}">
-                            <h6>person :{{person_id}}</h6>
+                        <div id="{{id}}" class="comments-section">
+                            <h6>Commented By :{{username}}</h6>
                             <p>{{content}}</p>
                         </div>
                     {{/each}}
-                
                 
             </div>
