@@ -24,7 +24,7 @@ search.addEventListener('input', (e) => {
         list.appendChild(result);
       });
     })
-    .catch(error => (alert (error +'There is ann Error in searching')));
+    .catch(error => (alert(`${error}There is ann Error in searching`)));
 });
 
 const href = (window.location.href);

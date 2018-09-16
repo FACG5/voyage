@@ -17,3 +17,21 @@ aboutButton.addEventListener('click', () => {
   aboutDiv.style.display = 'block';
   reviewsDiv.style.display = 'none';
 });
+ 
+sendBtn.addEventListener('click', () => {
+ document.sendBtn.value = {};
+ fetch('/reviews', {
+   method: 'POST',
+   credentials: 'same-origin',
+   headers: { 'Content-Type': 'application/json; charset=utf-8' },
+   body: JSON.stringify(object),
+ })
+   .then(response => response.json())
+   .then((response) => {
+     if (response.res === 'pass') {
+       window.location = '/business';
+     }
+     messageError.textContent = response.err;
+   })
+   .catch((error) => { messageError.textContent = error; });
+});
