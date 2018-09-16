@@ -7,14 +7,8 @@
     "test": "test"
   },
   "scripts": {
-<<<<<<< HEAD
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node src/index.js",
-    "dev": "nodemon src/index.js"
-=======
     "start": "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 457472ac2b3da0297c518e858850fb6436df7af4
   },
   "repository": {
     "type": "git",
