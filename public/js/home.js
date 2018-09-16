@@ -5,7 +5,6 @@ const cafe = document.getElementById('cafe');
 const search = document.getElementById('search');
 const list = document.getElementById('data');
 
-
 restaurant.addEventListener('click', () => {
   window.location = '/categories/restaurant';
 });

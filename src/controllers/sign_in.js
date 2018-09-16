@@ -3,8 +3,12 @@ const bcrypt = require('bcrypt');
 const { checkUser } = require('../model/queries/users');
 
 exports.get = (req, res) => {
-  res.render('sign_in', { style: 'style', dom: 'sign_in', title: 'sign in', style_special
-      : 'sign_in' });
+  res.render('sign_in', {
+    style: 'style',
+    dom: 'sign_in',
+    title: 'sign in',
+    style_special: 'sign_in',
+  });
 };
 /**
  * check out if the email is exist
@@ -12,7 +16,7 @@ exports.get = (req, res) => {
  * and the successful login create cookies
  */
 exports.post = (req, res, next) => {
-  const { email, password  } = req.body;
+  const { email, password } = req.body;
 
   checkUser(email)
     .then((request) => {

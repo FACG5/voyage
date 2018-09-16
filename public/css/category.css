@@ -1,0 +1,109 @@
+/*  small screen*/
+@media only screen and (max-width: 600px) {
+
+  .catResult{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+
+  }
+
+  .catResult :hover{
+    font-size: 38px;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  .catResultPic{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .catPhoto{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 345px;
+    height: 165px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .catResultPic :hover{
+    box-shadow:    2px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .catName{
+    margin-bottom: 50px;
+    margin-top: -70px;
+    padding-top: 10px;
+    width: 105px;
+    height: 45px;
+    text-align: left;
+    font-family:'Abril Fatface', cursive;
+    text-shadow: 2px 2px 2px #050505;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 36px;
+    color: #FFFFFF;
+  }
+}
+
+/*  larg screen*/
+@media (min-width: 901px) and (max-width: 1700px) {
+  .catResult{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+
+  .catResult :hover{
+    font-size: 38px;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  .catResultPic{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .catPhoto{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    height: 300px;
+    width: 425px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+
+  .catResultPic :hover{
+    box-shadow:  4px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .catName{
+    margin-bottom: 50px;
+    margin-top: -70px;
+    padding-top: 10px;
+    width: 105px;
+    height: 45px;
+    text-align: left;
+    font-family:'Abril Fatface', cursive;
+    text-shadow: 2px 2px 2px #050505;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 36px;
+    color: #FFFFFF;
+  }
+}
+
+}
