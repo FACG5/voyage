@@ -4,9 +4,7 @@ exports.verify = (req, res, next) => {
   if (!req.headers.cookie || !req.headers.cookie.includes('jwt')) {
     next();
   } else {
-    const jwt = req.headers.cookie.split('=')[1];
-    // const jwt = req;
-    console.log(jwt);
+    const jwt = req.cookies.jwt;
     if (jwt) {
       verify(jwt, process.env.SECRET, (err, jwt) => {
         if (err) {
@@ -30,4 +28,9 @@ exports.verify = (req, res, next) => {
       res.redirect('/sign_in');
     }
   }
+};
+
+exports.signout = (req, res) => {
+  res.clearCookie('jwt');
+  res.redirect('/');
 };

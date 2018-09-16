@@ -5,7 +5,7 @@ exports.get = (req, res, next) => {
   getReviews()
     .then((response) => {
       res.render('home', {
-        style: 'style', title: 'Home', dom: 'home', response,
+        req, style: 'style', title: 'Home', dom: 'home', response,
       });
     })
     .catch(err => next(err));
@@ -26,8 +26,8 @@ exports.post = (req, res, next) => {
 };
 
 exports.postReviews = (req, res) => {
-     const { review } = req.body.content;
-    getReviews(review)
-  .then(res.send(review))
-  .catch(err => res.send(`Fild : ${err}`));
+  const { review } = req.body.content;
+  getReviews(review)
+    .then(res.send(review))
+    .catch(err => res.send(`Fild : ${err}`));
 };

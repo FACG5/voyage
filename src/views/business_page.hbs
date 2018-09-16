@@ -1,21 +1,13 @@
 <div id=business" class="business">
 
     <div>
-        {{#if req.is_user}}
-            <p>user : {{req.jwt_data.name}}</p>
-        {{/if}}
-
         {{#if req.is_person}}
-            <p>type of :{{req.jwt_data.type}}</p>
-            <form class="add">
-
-            </form>
+            <div class="form-add-review">
+                form
+            </div>
         {{/if}}
     </div>
 
-    {{#if error_message}}
-        <span class="error-message">{{error_message}}</span>
-    {{else}}
         <div class="title">
             <h1>{{name}} {{category}}</h1>
             <h3>@{{name}}</h3>

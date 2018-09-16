@@ -3,12 +3,16 @@ const bcrypt = require('bcrypt');
 const { checkUser, getName } = require('../model/queries/users');
 
 exports.get = (req, res) => {
-  res.render('sign_in', {
-    style: 'style',
-    dom: 'sign_in',
-    title: 'sign in',
-    style_special: 'sign_in',
-  });
+  if (req.is_user) {
+    res.redirect('/');
+  } else {
+    res.render('sign_in', {
+      style: 'style',
+      dom: 'sign_in',
+      title: 'sign in',
+      style_special: 'sign_in',
+    });
+  }
 };
 /**
  * check out if the email is exist
@@ -32,8 +36,8 @@ exports.post = (req, res, next) => {
                     name: resName,
                     type: request[0].type,
                   };
-                  const cookies = sign(object, process.env.SECRET);
-                  res.cookie('jwt', cookies, { httpOnly: true });
+                  const jwt = sign(object, process.env.SECRET);
+                  res.cookie('jwt', jwt, { httpOnly: true });
                   res.send({
                     err: null,
                     res: 'pass',
