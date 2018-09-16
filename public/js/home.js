@@ -1,8 +1,25 @@
-/* global document */
 
+const restaurant = document.getElementById('restaurant');
+const park = document.getElementById('park');
+const cafe = document.getElementById('cafe');
 const search = document.getElementById('search');
 const list = document.getElementById('data');
 const showComments = document.getElementById('show-comments');
+
+console.log(restaurant);
+restaurant.addEventListener('click', () => {
+  window.location = '/categories/restaurant';
+
+});
+
+park.addEventListener('click', () => {
+  window.location = '/categories/park';
+});
+
+cafe.addEventListener('click', () => {
+  window.location = '/categories/cafe';
+});
+
 
 search.addEventListener('input', (e) => {
   e.preventDefault();
@@ -34,21 +51,3 @@ const name = href.split('=')[1];
 if (name) {
   window.location = `/business?name=${name}`;
 }
-
-showComments.addEventListener('click', (e) => {
-  console.log('asala');
-
-  const data = {'id' : 1};
-  fetch('/getComments', {
-    method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    credentials: 'same-origin', // credentials are HTTP cookies, TLS client certificates, and authentication entries (for HTTP authentication). [COOKIES] [TLS] [HTTP-AUTH].
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-    },
-    body: JSON.stringify(data), // body data type must match "Content-Type" header
-
-  })
-  .then(response => response.json())
-  .then((response) => {console.log(response)})
-  .catch(error => (alert(`${error}There is an Error in catch`)));
-});

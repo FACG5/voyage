@@ -40,7 +40,7 @@ main{
 }
 
 /*
-------    S m a l l       S c r e e n   -------   
+------    S m a l l       S c r e e n   -------
 */
 
 @media only screen and (max-width: 600px) {
@@ -152,8 +152,8 @@ main{
 }
 
 /*
-    ------    M e d i u m       S c r e e n   -------   
-*/ 
+    ------    M e d i u m       S c r e e n   -------
+*/
 
 @media (min-width: 601px) and (max-width: 900px) {
     .header {
@@ -264,8 +264,8 @@ main{
    }
 
    /*
-   ------    L a r g e       S c r e e n   -------   
-   */ 
+   ------    L a r g e       S c r e e n   -------
+   */
 
 @media (min-width: 901px) and (max-width: 1700px) {
     .header {
@@ -289,7 +289,7 @@ main{
    .header .sidebar{
        font-size: 30px;
        cursor: pointer;
-       position: relative; 
+       position: relative;
        width: 20%;
        text-align: center;
    }

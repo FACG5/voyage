@@ -1,6 +1,5 @@
 const { getSearch } = require('../model/queries/business');
 const { getReviews } = require('../model/queries/review');
-const { getComments } = require('../model/queries/review');
 
 exports.get = (req, res, next) => {
   getReviews()
@@ -23,11 +22,12 @@ exports.post = (req, res, next) => {
       });
       res.send(arr);
     })
-    .catch(err => next(err));
+    .catch(err => res.send(`Fild : ${err}`));
 };
 
-exports.getComments = (req,res,next) => {
-  getComments(id)
-  .then((response)=>console.log(req))
-  .catch(err => next(err));
+exports.postReviews = (req, res) => {
+     const { review } = req.body.content;
+    getReviews(review)
+  .then(res.send(review))
+  .catch(err => res.send(`Fild : ${err}`));
 };
