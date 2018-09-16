@@ -5,13 +5,25 @@ const router = express.Router();
 const categories = require('./categories');
 const home = require('./home');
 const signUp = require('./sign_up');
+
 const signIn = require('./sign_in');
+
 const business = require('./business_page');
 const error = require('./error');
 const middlewares = require('../middlewares');
 
+const contact = require('./contact_us');
+
+const about = require('./about_us');
+
 router.get('/', home.get); // router [/] Home Page
+
 router.post('/', home.post);
+
+
+router.get('/contact_us', contact.get);
+
+router.get('/about_us', about.get);
 
 
 router.get('/sign_up', signUp.get);

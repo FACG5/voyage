@@ -14,10 +14,26 @@
   </datalist>
 </form>
 
+            <div class="reviews-section">
+                <div class="review">
+                    {{#each response}}
+                        <h3> <a href="/user_profile" id="{{username}}" >@{{username}}</a></h3>
+                        <p>content: {{content}}</p>
+                        <h3><a href="/business_page" >name business: {{name}}</a></h3>
+                        <h3>evaluation: {{evaluation}}/5</h3>
+                        <button id="show-comments" class="fas fa-comments">comments</button>
+                    {{/each}}
+                    <h3>comment : </h3>
+                    <div class="comments">
+                        <button class="add-comment fas fa-plus-square">Add new</button>
+                        <div class="add-comment">
+                            <label for="comment">
+                                <input type="text" name="comment" id="comment-input">
+                            </label>
+                            <button type="submit" id="send-button">add comment</button>
+                        </div>
+                    </div>
+                </div>
 
-<hr>
-
-<div class="reviews-section">
-
-</div>
+            </div>
 
