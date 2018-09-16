@@ -5,7 +5,8 @@ const reviewsButton = getElement('reviews-button');
 const aboutButton = getElement('about-button');
 const reviewsDiv = getElement('reviews-div');
 const aboutDiv = getElement('about-div');
-
+const reviewInput = require('review-input');
+const rateInput = require('rate-input');
 aboutDiv.style.display = 'none';
 
 reviewsButton.addEventListener('click', () => {
@@ -19,7 +20,8 @@ aboutButton.addEventListener('click', () => {
 });
  
 sendBtn.addEventListener('click', () => {
- document.sendBtn.value = {};
+ const object = {"reviewInput":reviewInput.value ,"rateInput":rateInput.value }
+   
  fetch('/reviews', {
    method: 'POST',
    credentials: 'same-origin',
@@ -27,11 +29,8 @@ sendBtn.addEventListener('click', () => {
    body: JSON.stringify(object),
  })
    .then(response => response.json())
-   .then((response) => {
-     if (response.res === 'pass') {
-       window.location = '/business';
-     }
-     messageError.textContent = response.err;
-   })
+   .then((response) => { 
+    
+       console.log("Pass");   })
    .catch((error) => { messageError.textContent = error; });
 });

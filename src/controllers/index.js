@@ -12,7 +12,7 @@ router.get('/', home.get); // router [/] Home Page
 router.post('/', home.post);
 
 router.get('/business', business.get);
-
+router.post('reviews', business.post);
 
 router.get('/sign_up', signUp.get);
 router.get('/sign_up', signUp.get); // router sign_up Page (git)

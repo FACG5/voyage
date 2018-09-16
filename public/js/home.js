@@ -1,5 +1,23 @@
+
+const restaurant = document.getElementById('restaurant');
+const park = document.getElementById('park');
+const cafe = document.getElementById('cafe');
 const search = document.getElementById('search');
 const list = document.getElementById('data');
+
+
+restaurant.addEventListener('click', () => {
+  window.location = '/categories/restaurant';
+});
+
+park.addEventListener('click', () => {
+  window.location = '/categories/park';
+});
+
+cafe.addEventListener('click', () => {
+  window.location = '/categories/cafe';
+});
+
 
 search.addEventListener('input', (e) => {
   e.preventDefault();
