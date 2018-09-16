@@ -12,6 +12,7 @@ exports.get = (req, res, next) => {
         .then((responseReview) => {
           const { avg } = responseReview[0];
           res.render('business_page', {
+            req,
             responseReview,
             avg,
             style: 'style',

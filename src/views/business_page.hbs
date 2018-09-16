@@ -1,7 +1,13 @@
 <div id=business" class="business">
-    {{#if error_message}}
-        <span class="error-message">{{error_message}}</span>
-    {{else}}
+
+    <div>
+        {{#if req.is_person}}
+            <div class="form-add-review">
+                form
+            </div>
+        {{/if}}
+    </div>
+
         <div class="title">
             <h1>{{name}} {{category}}</h1>
             <h3>@{{name}}</h3>
