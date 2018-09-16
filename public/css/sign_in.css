@@ -1,55 +1,52 @@
-main {
-    /*height: 100vh;*/
-    background-color: #E5E5E5;
-}
-
 .sign-in {
     background-color: #FFFFFF;
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
     padding: 2%;
+    box-shadow: 0 12px 35px rgba(2, 61, 88, 0.3);
     border: none;
     border-radius: 5px;
 }
-
-.text {
+.sign-in .sign-in-title{
     text-align: center;
-    margin: 10px 0px 20px 0px;
-    font-weight: bold;
+    margin: 10px 0px 50px 0px;
+    text-transform: capitalize;
+    font-size: 30px;
 }
-
-input, button {
-    display: block;
-    margin: 3% auto;
-    padding: 1%;
-    width: 90%;
-    height: 40px;
-}
-
-
-input {
-    border: 1px solid #52C2E6;
-    outline: none;
-    background-color: #E5E5E5;
-    box-sizing: border-box;
+input, input:focus{
+    background-color: #E5E5E5 !important;
     border-radius: 15px;
-    padding: 5%;
-    margin-bottom: 10px;
+    outline: none;
+    letter-spacing: 1.5px;
+    border: 0 none;
+    margin-bottom: 5%;
+    font-family: 'Inconsolata', monospace;
+    color: #000;
+    display: block;
+    width: 80%;
+    margin: 0px auto 20px auto;
+    min-height: 50px;
+    padding: 10px 15px;
 }
 
 button {
-    background-color: #56CCF2;
-    border: 1px solid #F2F2F2;
-    box-sizing: border-box;
-    border-radius: 15px;
-    text-align: center;
-    outline: none;
+    border: solid 2px #52C2E6;
+    color: #52C2E6;
     font-weight: bold;
-    font-size: large;
+    padding: 15px 10px;
+    display: block;
+    border-radius: 15px;
+    cursor: pointer;
+    outline: none;
+    width: 50%;
+    margin: 0 auto;
+    font-family: 'Inconsolata', monospace;
+    font-size: 20px;
 }
 button:hover {
-    color: #56CCF2;
-    background: #E5E5E5;
+    background: #52C2E6;
+    border-color: #52C2E6;
+    color: #ffffff;
 }
 .message, .link-sing-up {
     position: relative;
@@ -64,8 +61,61 @@ button:hover {
     color: red;
     min-height:30px;
 }
-
 .link-sing-up {
     color: #56CCF2 !important;
     text-decoration: underline !important;
+    text-align: center;
+}
+
+/*
+------    S m a l l       S c r e e n   -------   
+*/
+
+@media only screen and (max-width: 600px) {
+    .sign-in {
+        width: 90%;
+    }
+    .sign-in .sign-in-title{
+        margin: 10px 0px 20px 0px;
+        font-size:18px;
+    }    
+    button {
+        border: solid 2px #52C2E6;
+        color: #52C2E6;
+        font-weight: bold;
+        padding: 10px 10px;
+        display: block;
+        border-radius: 15px;
+        cursor: pointer;
+        outline: none;
+        width: 50%;
+        margin: 0 auto;
+        font-family: 'Inconsolata', monospace;
+        font-size: 18px;
+    }
+       
+    button:hover {
+        background: #52C2E6;
+        border-color: #52C2E6;
+        color: #ffffff;
+    }
+    .message, .link-sing-up {
+        position: relative;
+        display: block;
+        margin: 3% auto;
+        padding: 1%;
+        font-weight: bold;
+        width: 90%;
+    }
+    
+    .message {
+        text-align: center;
+        color: red;
+        min-height:30px;
+    }
+    .link-sing-up {
+        color: #56CCF2 !important;
+        text-decoration: underline !important;
+        text-align: center;
+    }
 }

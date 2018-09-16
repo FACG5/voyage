@@ -1,0 +1,11 @@
+.about-idea .about{
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+.about-idea .imgs{
+
+}
+.about-idea .imgs img{
+    width: 100px;
+    height: 100px;
+}
