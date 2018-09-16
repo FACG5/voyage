@@ -5,16 +5,8 @@ const { getComments } = require('../model/queries/review');
 exports.get = (req, res, next) => {
   getReviews()
     .then((response) => {
-      response.forEach((element) => {
-        getComments(element.id)
-          .then((resComment) => {
-            if (resComment.length !== 0) {
-              res.render('home', {
-                style: 'style', title: 'Home', dom: 'home', response, resComment,
-              });
-            }
-          })
-          .catch(err => res.send(`Fild : ${err}`));
+      res.render('home', {
+        style: 'style', title: 'Home', dom: 'home', response,
       });
     })
     .catch(err => next(err));
@@ -32,4 +24,10 @@ exports.post = (req, res, next) => {
       res.send(arr);
     })
     .catch(err => next(err));
+};
+
+exports.getComments = (req,res,next) => {
+  getComments(id)
+  .then((response)=>console.log(req))
+  .catch(err => next(err));
 };

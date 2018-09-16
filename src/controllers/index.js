@@ -18,6 +18,8 @@ router.get('/', home.get); // router [/] Home Page
 
 router.post('/', home.post);
 
+router.post('/getComments', home.getComments);
+
 router.get('/business', business.get);
 
 router.get('/contact_us', contact.get);
