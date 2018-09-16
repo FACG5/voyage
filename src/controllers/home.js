@@ -16,12 +16,12 @@ exports.post = (req, res) => {
       });
       res.send(arr);
     })
-    .catch(err => res.send(`Fild : ${ err}`));
+    .catch(err => res.send(`Fild : ${err}`));
 };
 
 exports.postReviews = (req, res) => {
-  const { review } = req.body.content; 
+  const { review } = req.body.content;
   getReviews(review)
     .then(res.send(review))
-    .catch(err => res.send(`Fild : ${ err}`));
+    .catch(err => res.send(`Fild : ${err}`));
 };
