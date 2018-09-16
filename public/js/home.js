@@ -4,6 +4,7 @@ const park = document.getElementById('park');
 const cafe = document.getElementById('cafe');
 const search = document.getElementById('search');
 const list = document.getElementById('data');
+const showComments = document.getElementById('show-comments');
 
 restaurant.addEventListener('click', () => {
   window.location = '/categories/restaurant';
@@ -43,7 +44,6 @@ search.addEventListener('input', (e) => {
     })
     .catch(error => (alert(`${error}There is ann Error in searching`)));
 });
-
 const href = (window.location.href);
 const name = href.split('=')[1];
 if (name) {
