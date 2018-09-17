@@ -1,6 +1,7 @@
 /* global document */
 /* eslint-disable no-undef */
 /* eslint-disable prefer-const */
+/* eslint-disable no-alert */
 
 const personBtn = document.getElementById('person-btn');
 const personDiv = document.getElementById('person-div');
@@ -101,10 +102,18 @@ personSendBtn.addEventListener('click', () => {
     },
     body: JSON.stringify(personData), // body data type must match "Content-Type" header
   })
-    .then(response => response)
-    .then(response => window.location = '/sign_in' )
+    .then(response => response.json()).then((response) => {
+      const { message, pass } = response;
+      if (pass) {
+        alert(message);
+        window.location = '/sign_in';
+      } else {
+        alert(message);
+      }
+    })
     .catch(error => console.log(error));
 });
+
 businessSendBtn.addEventListener('click', () => {
   const businessCategory = selector[selector.selectedIndex].value;
   const businessData = {
@@ -126,6 +135,14 @@ businessSendBtn.addEventListener('click', () => {
     },
     body: JSON.stringify(businessData), // body data type must match "Content-Type" header
   })
-    .then(response => response).then(response => window.location = '/sign_in')
+    .then(response => response.json()).then((response) => {
+      const { message, pass } = response;
+      if (pass) {
+        alert(message);
+        window.location = '/sign_in';
+      } else if(!pass) {
+        alert(message);
+      }
+    })
     .catch(error => console.log(error));
 });
