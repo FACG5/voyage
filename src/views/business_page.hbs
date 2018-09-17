@@ -1,46 +1,65 @@
 <div id=business" class="business">
 
-    {{#if errorMessage}}
-        <span class="error-message">{{errorMessage}}</span>
+    {{#if error_message}}
+        <span class="error-message">{{error_message}}</span>
     {{else}}
+    <div class="title">
+        <h1>{{name}} {{category}}</h1>
+        <h3>@{{name}}</h3>
+    </div>
+    <div class="avg-evaluation">
+        <h3>Avg Evaluation : {{avg}}/5 </h3>
+    </div>
+    <div class="img">
+        <img src="{{img}}">
+    </div>
 
-        <div class="title">
-            <h1>{{name}} {{category}}</h1>
-            <h3>@{{name}}</h3>
-        </div>
-        <div class="avg-evaluation">
-            <h3>Avg Evaluation : {{avg}}/5 </h3>
-        </div>
-        <div class="img">
-            <img src="{{img}}">
-        </div>
-        <div id="info">
-            <div class="switch">
-                <button type="submit" id="reviews-button">reviews</button>
-                <button type="submit" id="about-button">about</button>
+    {{#if isUser}}
+        <div class="add-review">
+            <div class="head-review">
+                <p>{{userName}}</p>
             </div>
-            <div class="div-switch">
-                <div id="reviews-div" class="reviews-div">
-                {{#each responseReview}}
-                    <div id="{{id}}">
-                        <a href="#" id="{{username}}" class="link-name">{{username}}</a>
-                        <div class="content">
-                            <p>{{content}}</p>
-                        </div>
-                        <p>{{evaluation}}/5</p>
-                        <hr>
-                    </div>
-                {{/each}}
+            <div class="body-review">
+                <textarea placeholder="Add your opinion .." id="input"></textarea>
             </div>
-                <div id="about-div" class="about-div">
-                    <h2>Bio:</h2>
-                    <p id="description">{{description}}</p>
-                    <h2>Location:</h2>
-                    <p id="address">{{address}}</p>
-                    <h2>Type:</h2>
-                    <p id="category">#{{category}}</p>
+            <div class="foot-review">
+                <div class="send">
+                    <button type="submit" id="send-button">Send</button>
+                </div>
+                <div class="star">
+                    <span></span>
                 </div>
             </div>
         </div>
+    {{/if}}
+
+    <div id="info">
+        <div class="switch">
+            <button type="submit" id="reviews-button">reviews</button>
+            <button type="submit" id="about-button">about</button>
+        </div>
+        <div class="div-switch">
+            <div id="reviews-div" class="reviews-div">
+            {{#each responseReview}}
+                <div id="{{id}}">
+                    <a href="#" id="{{username}}" class="link-name">{{username}}</a>
+                    <div class="content">
+                        <p>{{content}}</p>
+                    </div>
+                    <p>{{evaluation}}/5</p>
+                    <hr>
+                </div>
+            {{/each}}
+        </div>
+            <div id="about-div" class="about-div">
+                <h2>Bio:</h2>
+                <p id="description">{{description}}</p>
+                <h2>Location:</h2>
+                <p id="address">{{address}}</p>
+                <h2>Type:</h2>
+                <p id="category">#{{category}}</p>
+            </div>
+        </div>
+    </div>
     {{/if}}
 </div>
