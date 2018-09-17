@@ -13,10 +13,10 @@ const error = require('./error');
 const contact = require('./contact_us');
 const about = require('./about_us');
 
-const middlewares = require('../middlewares');
+const checkauth = require('../middlewares/checkauth');
 
 router.use(cookieParser());
-router.use(middlewares.isSingIn);
+router.use(checkauth.isSingIn);
 
 router.get('/', home.get); // router [/] Home Page
 
