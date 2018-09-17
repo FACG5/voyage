@@ -15,6 +15,8 @@ const contact = require('./contact_us');
 
 const about = require('./about_us');
 
+const userProfile = require('./user_profile');
+
 router.get('/', home.get); // router [/] Home Page
 
 router.post('/', home.post);
@@ -24,6 +26,8 @@ router.get('/business', business.get);
 router.get('/contact_us', contact.get);
 
 router.get('/about_us', about.get);
+
+router.get('/user_profile/:username', userProfile.get);
 
 router.get('/sign_up', signUp.get);
 router.get('/sign_up', signUp.get); // router sign_up Page (git)

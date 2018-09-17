@@ -1,109 +1,189 @@
-/*  small screen*/
+/*
+------    S m a l l       S c r e e n   -------   
+*/
+
 @media only screen and (max-width: 600px) {
-
-  .catResult{
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-
+  .category-section{
+    width: 100%;
+    margin: auto;
+    padding: 10px;
   }
-
-  .catResult :hover{
-    font-size: 38px;
-    text-shadow: 2px 2px 2px black;
+  .category-section h2{
+    text-align: center;
+    margin-bottom: 3%;
+    text-transform: capitalize;
+    font-size: 20px;
   }
-
-  .catResultPic{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
+  .category-section h2 span{
+      color: #52C2E6;
+      margin-right:5px
   }
-
-  .catPhoto{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    align-items: center;
-    width: 345px;
-    height: 165px;
+  .category-section .catResult{
+    width: 100%;
+    margin: 0px auto 20px auto;
+    min-height: 150px;
+    max-height:150px;
+    position: relative;
     border-radius: 10px;
-    border: 1px solid black;
   }
-
-  .catResultPic :hover{
-    box-shadow:    2px 4px 4px rgba(0, 0, 0, 0.25);
+  .catResultPic img{
+    width: 100%;
+    min-height: 150px;
+    max-height:150px;
+    border-radius: 10px;
   }
-
-  .catName{
-    margin-bottom: 50px;
-    margin-top: -70px;
-    padding-top: 10px;
-    width: 105px;
-    height: 45px;
-    text-align: left;
-    font-family:'Abril Fatface', cursive;
-    text-shadow: 2px 2px 2px #050505;
-    font-style: italic;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 36px;
-    color: #FFFFFF;
+  .catResultPic .cat-data{
+    position: absolute;
+    bottom:0;
+    font-size:17px;
+    margin: 15px;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .checked {
+    color: yellow;
+}
+  .rgba{
+    border-radius: 10px;
+    width: 100%;
+    min-height: 150px;
+    max-height:150px;
+    position: absolute;
+    bottom: 0;
+    background:rgba(3, 4, 4, 0.55);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  .rgba:hover{
+    opacity:0;
+    cursor: pointer;
   }
 }
 
-/*  larg screen*/
-@media (min-width: 901px) and (max-width: 1700px) {
-  .catResult{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+/*
+------    M e d i u m       S c r e e n   -------
+*/
 
+@media (min-width: 601px) and (max-width: 900px) {
+  .category-section{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
   }
-
-  .catResult :hover{
-    font-size: 38px;
-    text-shadow: 2px 2px 2px black;
+  .category-section h2{
+    text-align: center;
+    margin-bottom: 3%;
+    text-transform: capitalize;
+    font-size: 40px;
   }
-
-  .catResultPic{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
+  .category-section h2 span{
+      color: #52C2E6;
+      margin-right: 10px
   }
-
-  .catPhoto{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    height: 300px;
-    width: 425px;
+  .category-section .catResult{
+    width: 90%;
+    margin: 0px auto 20px auto;
+    min-height: 300px;
+    max-height:300px;
+    position: relative;
     border-radius: 10px;
-    border: 1px solid black;
+  }
+  .catResultPic img{
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    border-radius: 10px;
+  }
+  .catResultPic .cat-data{
+    position: absolute;
+    bottom:0;
+    font-size:20px;
+    margin: 15px;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .checked {
+    color: yellow;
+}
+  .rgba{
+    border-radius: 10px;
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    position: absolute;
+    bottom: 0;
+    background:rgba(3, 4, 4, 0.55);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  .rgba:hover{
+    opacity:0;
+    cursor: pointer;
   }
 
-  .catResultPic :hover{
-    box-shadow:  4px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-
-  .catName{
-    margin-bottom: 50px;
-    margin-top: -70px;
-    padding-top: 10px;
-    width: 105px;
-    height: 45px;
-    text-align: left;
-    font-family:'Abril Fatface', cursive;
-    text-shadow: 2px 2px 2px #050505;
-    font-style: italic;
-    font-weight: 500;
-    line-height: normal;
-    font-size: 36px;
-    color: #FFFFFF;
-  }
 }
 
+/*
+------    L a r g e       S c r e e n   -------   
+*/
+
+@media (min-width: 901px){
+  .category-section{
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+  }
+  .category-section h2{
+    text-align: center;
+    margin-bottom: 3%;
+    text-transform: capitalize;
+    font-size: 40px;
+  }
+  .category-section h2 span{
+      color: #52C2E6;
+      margin-right: 10px
+  }
+  .category-section .catResult{
+    width: 90%;
+    margin: 0px auto 30px auto;
+    min-height: 450px;
+    max-height: 450px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .catResultPic img{
+    width: 100%;
+    min-height: 450px;
+    max-height: 450px;
+    border-radius: 10px;
+  }
+  .catResultPic .cat-data{
+    position: absolute;
+    bottom:0;
+    font-size: 30px;
+    margin: 15px;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .checked {
+    color: yellow;
+}
+  .rgba{
+    border-radius: 10px;
+    width: 100%;
+    min-height: 450px;
+    max-height: 450px;
+    position: absolute;
+    bottom: 0;
+    background:rgba(3, 4, 4, 0.55);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+  }
+  .rgba:hover{
+    opacity:0;
+    cursor: pointer;
+  }
 }

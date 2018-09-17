@@ -26,8 +26,8 @@ exports.post = (req, res, next) => {
 };
 
 exports.postReviews = (req, res) => {
-     const { review } = req.body.content;
-    getReviews(review)
-  .then(res.send(review))
-  .catch(err => res.send(`Fild : ${err}`));
+  const { review } = req.body.content;
+  getReviews(review)
+    .then(res.send(review))
+    .catch(err => res.send(`Fild : ${err}`));
 };

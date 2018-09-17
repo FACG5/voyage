@@ -15,6 +15,7 @@ exports.get = (req, res, next) => {
             responseReview,
             avg,
             style: 'style',
+            style_special: 'business_page',
             title: 'business',
             dom: 'business_page',
             name,

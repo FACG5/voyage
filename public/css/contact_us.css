@@ -179,6 +179,7 @@
     }
     .contact .contact-form{
         padding-left: 0px;
+        text-align: center;
         padding-right: 0px;
     }
     .form-control
@@ -190,7 +191,7 @@
         border: 0 none;
         margin-bottom: 5%;
         color: #000;
-        display: block;
+        display: inline-block;
         width: 80%;
         margin: 0px auto 20px auto;
         min-height: 40px;
