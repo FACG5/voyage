@@ -18,7 +18,7 @@
       color: #52C2E6;
       margin-right:5px
   }
-  .category-section .catResult{
+  .category-section .cat-result{
     width: 100%;
     margin: 0px auto 20px auto;
     min-height: 150px;
@@ -26,13 +26,13 @@
     position: relative;
     border-radius: 10px;
   }
-  .catResultPic img{
+  .cat-result-pic img{
     width: 100%;
     min-height: 150px;
     max-height:150px;
     border-radius: 10px;
   }
-  .catResultPic .cat-data{
+  .cat-result-pic .cat-data{
     position: absolute;
     bottom:0;
     font-size:17px;
@@ -81,7 +81,7 @@
       color: #52C2E6;
       margin-right: 10px
   }
-  .category-section .catResult{
+  .category-section .cat-result{
     width: 90%;
     margin: 0px auto 20px auto;
     min-height: 300px;
@@ -89,13 +89,13 @@
     position: relative;
     border-radius: 10px;
   }
-  .catResultPic img{
+  .cat-result-pic img{
     width: 100%;
     min-height: 300px;
     max-height: 300px;
     border-radius: 10px;
   }
-  .catResultPic .cat-data{
+  .cat-result-pic .cat-data{
     position: absolute;
     bottom:0;
     font-size:20px;
@@ -145,7 +145,7 @@
       color: #52C2E6;
       margin-right: 10px
   }
-  .category-section .catResult{
+  .category-section .cat-result{
     width: 90%;
     margin: 0px auto 30px auto;
     min-height: 450px;
@@ -153,13 +153,13 @@
     position: relative;
     border-radius: 10px;
   }
-  .catResultPic img{
+  .cat-result-pic img{
     width: 100%;
     min-height: 450px;
     max-height: 450px;
     border-radius: 10px;
   }
-  .catResultPic .cat-data{
+  .cat-result-pic .cat-data{
     position: absolute;
     bottom:0;
     font-size: 30px;
