@@ -2,10 +2,21 @@ const dbConnection = require('../database/db_connection');
 
 const getReviews = () => new Promise((resolve, reject) => {
   const sql = {
-    text: 'SELECT * FROM review ORDER BY id desc',
+    text: 'SELECT review.id, review.content , review.evaluation , person.username , business.name FROM review JOIN person on review.person_id=review.person_id JOIN business on review.business_id=business.id ORDER BY review.id desc',
   };
   dbConnection.query(sql, (error, res) => {
     if (error) return reject(error);
+    return resolve(res.rows);
+  });
+});
+
+const getComments = reviewId => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'SELECT comment.id, comment.person_id, comment.review_id, comment.content, person.username FROM comment JOIN person on comment.person_id=person.id WHERE comment.review_id=$1',
+    values: [reviewId],
+  };
+  dbConnection.query(sql, (error, res) => {
+    if (error) return reject(new Error(`Error in DB ${error}`));
     return resolve(res.rows);
   });
 });
@@ -27,5 +38,6 @@ const getReviewsByBusiness = businessId => new Promise((resolve, reject) => {
 
 module.exports = {
   getReviews,
+  getComments,
   getReviewsByBusiness,
 };
