@@ -35,6 +35,7 @@ router.post('/sign_in', signIn.post); // router sign_in Page (post)
 router.get('/categories/:category', categories.get);
 
 router.get('/business', business.get);
+router.post('/business', business.post);
 
 router.get('/sign_out', signOut.signout);
 

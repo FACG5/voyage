@@ -6,6 +6,12 @@ const aboutButton = getElement('about-button');
 const reviewsDiv = getElement('reviews-div');
 const aboutDiv = getElement('about-div');
 const sendButton = getElement('send-button');
+const textReview = getElement('text-review');
+const evaluation = getElement('evaluation');
+
+const currentData = getElement('current-data');
+
+const nameBusiness = document.getElementsByTagName('title');
 
 aboutDiv.style.display = 'none';
 
@@ -19,7 +25,39 @@ aboutButton.addEventListener('click', () => {
   reviewsDiv.style.display = 'none';
 });
 
-sendButton.addEventListener('click',(e)=>{
+sendButton.addEventListener('click', (e) => {
   e.preventDefault();
 
+  if (textReview.value === '' || evaluation.value === '') {
+    alert('file the filed');
+  }
+  const object = {
+    text: textReview.value,
+    evaluation: evaluation.value,
+    nameBusiness: nameBusiness[0].textContent,
+  };
+
+  fetch('/business', {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: { 'Content-Type': 'application/json; charset=utf-8' },
+    body: JSON.stringify(object),
+  })
+    .then(response => response.json())
+    .then((response) => {
+      textReview.value = '';
+      evaluation.value = '';
+      create('a', response.username);
+      create('p', object.text);
+      create('p', `${object.evaluation.toString()}/5`);
+      const hr = document.createElement('hr');
+      currentData.appendChild(hr);
+    })
+    .catch((error) => { alert(error); });
 });
+
+const create = (element, value) => {
+  const elementNew = document.createElement(element);
+  elementNew.textContent = value;
+  currentData.appendChild(elementNew);
+};

@@ -27,8 +27,19 @@ const getReviewsByBusiness = businessId => new Promise((resolve, reject) => {
       + '(SELECT review.*,eval.avg FROM '
       + '(SELECT business_id,ROUND(AVG(evaluation)) AS avg FROM review GROUP BY business_id)'
       + 'eval JOIN review on review.business_id=eval.business_id WHERE review.business_id=$1)'
-      + 'allDataReview LEFT JOIN person ON person.id = allDataReview.person_id',
+      + 'allDataReview LEFT JOIN person ON person.id = allDataReview.person_id ORDER BY allDataReview.id DESC',
     values: [businessId],
+  };
+  dbConnection.query(sql, (error, res) => {
+    if (error) return reject(error);
+    return resolve(res.rows);
+  });
+});
+
+const setReview = (idPerson, idBusiness, content, evaluation) => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'INSERT INTO review (person_id, business_id, content, evaluation) VALUES ($1,$2,$3,$4)',
+    values: [parseInt(idPerson), parseInt(idBusiness), content, parseInt(evaluation)],
   };
   dbConnection.query(sql, (error, res) => {
     if (error) return reject(error);
@@ -40,4 +51,5 @@ module.exports = {
   getReviews,
   getComments,
   getReviewsByBusiness,
+  setReview,
 };
