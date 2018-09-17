@@ -6,10 +6,8 @@ const search = document.getElementById('search');
 const list = document.getElementById('data');
 const showComments = document.getElementById('show-comments');
 
-console.log(restaurant);
 restaurant.addEventListener('click', () => {
   window.location = '/categories/restaurant';
-
 });
 
 park.addEventListener('click', () => {
