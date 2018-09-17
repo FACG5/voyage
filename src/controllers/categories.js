@@ -5,7 +5,7 @@ exports.get = (req, res, next) => {
   getCategories(category)
     .then((response) => {
       res.render('category', {
-        style: 'style', style_special: 'category', title: category, response,
+        style: 'style', style_special: 'category', title: category, response, dom: 'categories',
       });
     })
     .catch(err => next(err));
