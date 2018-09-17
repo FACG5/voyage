@@ -11,10 +11,9 @@ const addPerson = (userId, data) => new Promise((resolve, reject) => {
   };
   dbConnection.query(sql, (err, res) => {
     if (err) {
-      reject(err);
-    } else {
-      resolve(res);
+      return reject(err);
     }
+    return resolve(res);
   });
 });
 

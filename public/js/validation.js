@@ -1,4 +1,5 @@
 /* global document */
+/* eslint-disable no-unused-vars */
 
 const displayErr = (errElem, errMsg) => {
   const errorElement = errElem;

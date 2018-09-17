@@ -5,41 +5,40 @@ const { addBusiness } = require('../model/queries/business');
 
 exports.get = (req, res) => {
   res.render('sign_up', {
-    style: 'style', dom: 'sign_up', vald: 'validation', title: 'sign up', a: true,
+    style: 'style', dom: 'sign_up', vald: 'validation', title: 'sign up',
   });
 };
 exports.post = (request, response) => {
   const data = request.body;
   const { email, password, type } = data;
-  if (type === 0 || 1 && email && password) {
+  if (email && password) {
     hashPassword(password, (err, hash) => {
       if (err) {
-        response.render('sign_up', { dom: 'sign_up', msg: 'ERROR' });
+        response.render('sign_up', { dom: 'sign_up', message: 'ERROR' });
       } else {
-        addUser(data)
-          .then((res) => {
-            const userId = res.rows[0].id;
+        addUser(data, hash)
+          .then((result) => {
+            const userId = result.rows[0].id;
             if (type === 0) { // type = 0 represents person
               addPerson(userId, data)
                 .then(() => {
-                  response.render('sign_in', { dom: 'sign_in', msg: 'Person has been added successful' });
-                }).catch((err) => {
-                  response.render('sign_up', { dom: 'sign_up', msg: ' email already exists' });
+                  response.render('sign_in', { dom: 'sign_in', message: 'Person has been added successful' });
+                }).catch(() => {
+                  response.render('sign_up', { dom: 'sign_up', message: ' email already exists' });
                 });
             } else if (type === 1) { // type = 1 represents business
               addBusiness(userId, data)
                 .then(() => {
-                  response.render('sign_in', { dom: 'sign_in', msg: 'Businesshas been added successful' });
-                }).catch((err) => {
-                  console.log('eeeerr', err);
-                  response.render('sign_up', { dom: 'sign_up', msg: ' email already exists' });
+                  response.render('sign_in', { dom: 'sign_in', message: 'Business has been added successful' });
+                }).catch(() => {
+                  response.render('sign_up', { dom: 'sign_up', message: ' email already exists' });
                 });
             }
           })
-          .catch((err) => {
+          .catch(() => {
             response.render('sign_up', {
               dom: 'sign_up',
-              msg: ' email already exists',
+              message: ' email already exists',
             });
           });
       }

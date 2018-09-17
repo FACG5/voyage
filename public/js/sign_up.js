@@ -1,5 +1,7 @@
 /* global document */
 /* eslint-disable no-undef */
+/* eslint-disable prefer-const */
+
 const personBtn = document.getElementById('person-btn');
 const personDiv = document.getElementById('person-div');
 const personSendBtn = document.getElementById('person-send');
@@ -19,7 +21,7 @@ const businessEmail = document.getElementById('business-email');
 const businessName = document.getElementById('business-name');
 const businessAddress = document.getElementById('address');
 const businessDescription = document.getElementById('description');
-const selector = document.getElementById('category')
+const selector = document.getElementById('category');
 const imageUrl = document.getElementById('image');
 const personErr = document.getElementById('person-err');
 const businessErr = document.getElementById('business-err');
@@ -79,17 +81,17 @@ imageUrl.addEventListener('focusout', () => {
   checkValue(imageUrl, businessErr, 'image URL is required');
 });
 
-personSendBtn.addEventListener('click', (e) => {
- checkGender();
+personSendBtn.addEventListener('click', () => {
+  checkGender();
   const personData = {
     email: personEmail.value,
     password: personPass.value,
     userName: userName.value,
     fName: fName.value,
     lName: lName.value,
-    gender: gender,
+    gender,
     birthDay: personBirthDay.value,
-    type:0,
+    type: 0,
   };
   fetch('/sign_up', {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -99,10 +101,11 @@ personSendBtn.addEventListener('click', (e) => {
     },
     body: JSON.stringify(personData), // body data type must match "Content-Type" header
   })
-    .then(response => alert(response.msg))
+    .then(response => response)
+    .then(response => window.location = '/sign_in' )
     .catch(error => console.log(error));
 });
-businessSendBtn.addEventListener('click', (e) => {
+businessSendBtn.addEventListener('click', () => {
   const businessCategory = selector[selector.selectedIndex].value;
   const businessData = {
     email: businessEmail.value,
@@ -110,9 +113,9 @@ businessSendBtn.addEventListener('click', (e) => {
     businessName: businessName.value,
     businessAddress: businessAddress.value,
     businessDescription: businessDescription.value,
-    businessCategory:businessCategory,
+    businessCategory,
     image: imageUrl.value,
-    type:1,
+    type: 1,
   };
 
   fetch('/sign_up', {
@@ -123,6 +126,6 @@ businessSendBtn.addEventListener('click', (e) => {
     },
     body: JSON.stringify(businessData), // body data type must match "Content-Type" header
   })
-    .then(response => alert(response.msg))
+    .then(response => response).then(response => window.location = '/sign_in')
     .catch(error => console.log(error));
 });
