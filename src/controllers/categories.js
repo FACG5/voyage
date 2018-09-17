@@ -10,7 +10,13 @@ exports.get = (req, res, next) => {
   getCategories(category)
     .then((response) => {
       res.render('category', {
-        style: 'style', style_special: 'category', title: category, response, isUser, userName,
+        style: 'style',
+        style_special: 'category',
+        title: category,
+        response,
+        dom: 'categories',
+        isUser,
+        userName,
       });
     })
     .catch(err => next(err));

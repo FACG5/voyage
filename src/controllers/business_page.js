@@ -35,6 +35,8 @@ exports.get = (req, res, next) => {
               });
             } else {
               res.render('business_page', {
+                userName,
+                isUser,
                 avg,
                 style: 'style',
                 title: 'business',

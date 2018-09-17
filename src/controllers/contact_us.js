@@ -4,6 +4,7 @@ exports.get = (req, res) => {
   if (isUser) {
     userName = req.data.name;
   }
+
   res.render('contact_us', {
     style: 'style',
     style_special: 'contact_us',
