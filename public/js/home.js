@@ -1,4 +1,5 @@
 /* global document */
+/* global window */
 
 const restaurant = document.getElementById('restaurant');
 const park = document.getElementById('park');
