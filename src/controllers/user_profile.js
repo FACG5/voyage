@@ -6,7 +6,7 @@ exports.get = (({ params: { username } }, res, next) => {
     .then((response) => {
       if (response.length !== 0) {
         let img;
-        const { gender, username } = response[0];
+        const { gender } = response[0];
         if (gender === 'femail') {
           img = 'https://image.flaticon.com/icons/svg/145/145852.svg';
         } else {

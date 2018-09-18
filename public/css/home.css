@@ -1,1 +1,259 @@
 
+/*
+------    S m a l l       S c r e e n   -------
+*/
+
+@media only screen and (max-width: 600px) {
+    .category-section{
+        min-height: 120px;
+    }
+    .categoriesBtns{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-column-gap: 5%;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .categories{
+        padding:0px;
+        display: block;
+        transition: all 0.5s ease-out;
+        box-shadow: 1px 1px 1px rgb(81, 194, 230), -1px -1px 1px rgb(81, 194, 230);
+    }
+    .categories:hover{
+        transform: scale(1.11);
+        cursor: pointer;
+    }
+    .categories img{
+         width: 80%;
+         display: inline-block;
+         
+    }
+    .categories p{
+        visibility:hidden;
+        font-size:12px;
+        transition: all 0.5s ease;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+    .categories:hover p{
+        visibility:visible;
+    }
+    .search-section{
+        min-height: 100px;
+        max-height: 100px;
+        margin-top: 0%;
+        color: rgba(110, 120, 136, 0.9);
+        text-align: center;
+   }
+    .search-section .search-form{
+      width: 80%;
+      margin: auto;
+      padding-top:10px;
+    }
+    .search-section h2{
+        font-size:16px;
+    }
+    .search-section ::placeholder{
+        color: rgba(110, 120, 136, 0.9);
+        font-weight: normal;
+        font-family:'Inconsolata', monospace;
+        font-size:16px;
+    }
+    .search-section .search-input{
+      background: none;
+      border-radius:20px;
+      outline:none;
+      letter-spacing: 1px;
+      border: solid 2px rgb(81, 194, 230);
+      margin-bottom: 5%;
+      color: rgba(110, 120, 136, 0.9);
+      font-weight: normal;
+      font-family:'Inconsolata', monospace;
+      font-size:16px;
+      display: inline-block;
+      width: 100%;
+      margin: 0px auto 20px auto;
+      height:40px;
+      padding:5px 20px;
+      box-shadow: 1px 1px 1px rgba(110, 120, 136, 0.9);
+  }
+}
+
+/*
+ ------    M e d i u m       S c r e e n   -------
+*/
+
+@media (min-width: 601px) and (max-width: 900px) {
+    .category-section{
+        min-height: 170px;
+    }
+    .categoriesBtns{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        grid-column-gap: 5%;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .categories{
+        padding: 10px;
+        display: block;
+        transition: all 0.5s ease-out;
+        box-shadow: 1px 1px 1px rgb(81, 194, 230), -1px -1px 1px rgb(81, 194, 230);
+    }
+    .categories:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+    .categories img{
+         width: 90%;
+         display: inline-block;
+         
+    }
+      .categories p{
+    visibility:hidden;
+    transition: all 0.5s ease;
+    font-weight: bold;
+    text-transform: capitalize;
+    }
+  .categories:hover p{
+      visibility:visible;
+    }
+    .search-section{
+        min-height: 120px;
+        max-height: 120px;
+        margin-top: 2%;
+        color: rgba(110, 120, 136, 0.9);
+        text-align: center;
+    }
+    .search-section .search-form{
+      width: 70%;
+      margin: auto;
+      padding-top: 20px;
+    }
+    .search-section ::placeholder{
+        color: rgba(110, 120, 136, 0.9);
+        font-weight: normal;
+        font-family:'Inconsolata', monospace;
+        font-size: 20px;
+    }
+    .search-section .search-input{
+      background: none;
+      border-radius:20px;
+      outline:none;
+      letter-spacing: 1px;
+      border: solid 2px rgb(81, 194, 230);
+      margin-bottom: 5%;
+      color: rgba(110, 120, 136, 0.9);
+      font-weight: normal;
+      font-family:'Inconsolata', monospace;
+      font-size: 20px;
+      display: inline-block;
+      width: 100%;
+      margin: 0px auto 20px auto;
+      height: 50px;
+      padding:5px 20px;
+      box-shadow: 1px 1px 1px rgba(110, 120, 136, 0.9);
+  }
+}
+
+/*
+------    L a r g e       S c r e e n   -------
+*/
+
+@media (min-width: 901px){
+    .category-section{
+        min-height: 200px;
+    }
+       .categoriesBtns{
+           display: grid;
+           grid-template-columns: 30% 30% 30%;
+           grid-column-gap: 5%;
+           width: 60%;
+           margin: 0 auto;
+       }
+       .categories{
+           padding: 20px;
+           position: relative;
+           display: block;
+           transition: all 0.5s ease-out;
+           box-shadow: 1px 1px 1px rgb(81, 194, 230), -1px -1px 1px rgb(81, 194, 230);
+       }
+       .categories:hover{
+           transform: scale(1.1);
+           cursor: pointer;
+       }
+       .categories img{
+            width: 80%;
+            display: inline-block;
+            
+       }
+       .categories p{
+        visibility:hidden;
+        transition: all 0.5s ease;
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 17px;
+        }
+      .categories:hover p{
+          visibility:visible;
+        }
+      .search-section{
+          min-height: 150px;
+          max-height: 150px;
+          margin-top: 5%;
+          color: rgba(110, 120, 136, 0.9);
+          text-align: center;
+      }
+      .search-section .search-form{
+        width: 50%;
+        margin: auto;
+        padding-top: 20px;
+      }
+      .search-section ::placeholder{
+          color: rgba(110, 120, 136, 0.9);
+          font-weight: normal;
+          font-family:'Inconsolata', monospace;
+          font-size: 20px;
+      }
+      .search-section .search-input{
+        background: none;
+        border-radius:20px;
+        outline:none;
+        letter-spacing: 1px;
+        border: solid 2px rgb(81, 194, 230);
+        margin-bottom: 5%;
+        color: rgba(110, 120, 136, 0.9);
+        font-weight: normal;
+        font-family:'Inconsolata', monospace;
+        font-size: 20px;
+        display: inline-block;
+        width: 100%;
+        margin: 0px auto 20px auto;
+        height: 50px;
+        padding:5px 20px;
+        box-shadow: 1px 1px 1px rgba(110, 120, 136, 0.9);
+
+    }
+    .reviews-section{
+        /* background: #fff; */
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 20px 15px;
+
+    }
+    .result{
+        background: #fff;
+        width:100%;
+        margin: 0px auto 20px auto;
+        border-radius: 10px;
+    }
+    #evaluation{
+        display: none;
+    }
+    .review-footer{
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+}

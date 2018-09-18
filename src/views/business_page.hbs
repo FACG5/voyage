@@ -20,13 +20,19 @@
             <div class="div-switch">
                 <div id="reviews-div" class="reviews-div">
                 {{#each responseReview}}
-                    <div id="{{id}}">
+                    <div id="{{id}}" class="result">
                         <a href="/user_profile/{{username}}" id="{{username}}" class="link-name">{{username}}</a>
                         <div class="content">
                             <p>{{content}}</p>
                         </div>
-                        <p>{{evaluation}}/5</p>
-                        <hr>
+                        <p id="evaluation" >{{evaluation}}</p>
+                        <ul class="stars">
+                            <li id="one-star" class=" fa fa-star"></li>
+                            <li id="two-star" class=" fa fa-star"></li>
+                            <li id="three-star" class=" fa fa-star"></li>
+                            <li id="four-star" class="fa fa-star"></li>
+                            <li id="five-star " class="fa fa-star"></li>
+                        </ul>
                     </div>
                 {{/each}}
             </div>

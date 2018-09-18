@@ -44,4 +44,18 @@ CREATE TABLE comment (
 	content TEXT NOT NULL
 );
 
+INSERT INTO users (email, password, type) VALUES ('asmaa@gmail.com', '000', 'person');
+INSERT INTO users (email, password, type) VALUES ('ahmad@gmail.com', '000', 'business');
+
+INSERT INTO person (user_id, username, first_name, last_name, birthday, gender) VALUES (1,'asmaa','asmaa','izz', '1996-05-17','femail');
+INSERT INTO business (user_id, name, address, description, img, category) VALUES (2,'ahmad','Gaza-Naser','There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour', 'http://www.lakeheart.it/files/20170324_185419-1.jpg','restaurant');
+
+
+INSERT INTO review (person_id, business_id, content, evaluation) VALUES (1, 1, 'There are many variations of passages of Lorem, Stop waiting to find ',4);
+INSERT INTO review (person_id, business_id, content, evaluation) VALUES (1, 1, 'Baaad , I dont love it   ',3);
+
+INSERT INTO comment (person_id, review_id, content) VALUES (1, 1, 'WooW');
+
+INSERT INTO users (email, password, type) VALUES ('asmaa1@gmail.com','$2b$10$d0cyrUlOtl94wxL7wMcVjO24F3Ld6LqZqAVdugDfzlY/E2aGKm5Cq', 'person');
+
 COMMIT ;

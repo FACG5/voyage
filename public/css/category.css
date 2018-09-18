@@ -162,8 +162,8 @@
   .cat-result-pic .cat-data{
     position: absolute;
     bottom:0;
-    font-size: 30px;
-    margin: 15px;
+    font-size:25px;
+    margin:5px;
     color: #fff;
     text-transform: capitalize;
   }

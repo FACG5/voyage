@@ -5,7 +5,7 @@ exports.get = (req, res, next) => {
   getReviews()
     .then((response) => {
       res.render('home', {
-        style: 'style', title: 'Home', dom: 'home', response,
+        style: 'style', style_special: 'home', title: 'Voyage', dom: 'home', response,
       });
     })
     .catch(err => next(err));

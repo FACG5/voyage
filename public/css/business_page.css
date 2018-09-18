@@ -1,3 +1,28 @@
 img{
     width:300px;
 }
+
+
+/*
+------    S m a l l       S c r e e n   -------
+*/
+
+@media only screen and (max-width: 600px) {
+
+}
+
+/*
+ ------    M e d i u m       S c r e e n   -------
+*/
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+}
+
+/*
+------    L a r g e       S c r e e n   -------
+*/
+
+@media (min-width: 901px){
+    
+}
