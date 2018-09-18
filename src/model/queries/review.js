@@ -36,6 +36,7 @@ const getReviewsByBusiness = businessId => new Promise((resolve, reject) => {
   });
 });
 
+
 const setReview = (idPerson, idBusiness, content, evaluation) => new Promise((resolve, reject) => {
   const sql = {
     text: 'INSERT INTO review (person_id, business_id, content, evaluation) VALUES ($1,$2,$3,$4)',
@@ -47,9 +48,23 @@ const setReview = (idPerson, idBusiness, content, evaluation) => new Promise((re
   });
 });
 
+const getAvg = category => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'SELECT business.*, rate.* FROM'
+      + '(SELECT business_id,ROUND(AVG(evaluation)) AS avg FROM review GROUP BY business_id )'
+      + ' AS rate JOIN business on business.id = rate.business_id WHERE category=$1 ORDER BY rate.avg DESC',
+    values: [category],
+  };
+  dbConnection.query(sql, (error, res) => {
+    if (error) return reject(new Error(`Error in DB ${error}`));
+    return resolve(res.rows);
+  });
+});
+
 module.exports = {
   getReviews,
   getComments,
   getReviewsByBusiness,
   setReview,
+  getAvg,
 };

@@ -1,3 +1,48 @@
-  <h3> <a > Hi{{username}}</a></h3>
+<section class="profile-section">
 
-  
+  {{#if message}}
+  <p>{{message}}</p>
+  {{else}}
+
+
+  <div class="profile-top">
+    <img src={{img}}>
+    <h2><a href="/user_profile/{{username}}" id="{{username}}" >@{{username}}</a></h2>
+  </div>
+
+<div class="switch">
+  <button type="submit" id="info-button">informations</button>
+  <button type="submit" id="reviews-button">reviews</button>
+</div>
+
+<div class="info" id="info">
+  {{#each response}}
+    <h2><a href="/user_profile/{{username}}" id="{{username}}" >@{{username}}</a></h2>
+    <h3> {{first_name}}</h3>
+    <h3> {{last_name}}</h3>
+    <h3>{{email}}</h3>
+    <h3> {{bithday}}</h3>
+    <h3> {{gender}}</h3>
+  {{/each }}
+</div>
+
+<div class="reviews" id="reviews">
+  <div id="{{id}}">
+    {{#each result}}
+      <div class="result">
+          <h2><a href="/business?name={{name}}">@{{name}}</a></h2>
+          <p>{{content}}</p>
+          <p id="evaluation">{{evaluation}}</p>
+          <ul class="stars">
+            <li id="one-star" class=" fa fa-star"></li>
+            <li id="two-star" class=" fa fa-star"></li>
+            <li id="three-star" class=" fa fa-star"></li>
+            <li id="four-star" class="fa fa-star"></li>
+            <li id="five-star " class="fa fa-star"></li>
+          </ul>
+      </div>
+ {{/each}}
+  </div>
+</div>
+  {{/if}}
+</section>

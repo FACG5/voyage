@@ -1,38 +1,49 @@
 
-<section>
+<section class="category-section">
   <div class="categoriesBtns">
-    <button id="cafe" class="categories"  type="button" ><img id="coffeeCup" src="./images/coffee-cup.svg" ></button>
-    <button id="park" class="categories" type="button"> <img  id="parks" src="./images/park.svg" ></button>
-      <button id="restaurant" class="categories"  type="button" ><img  id="tray" src="./images/tray.svg" ></button>
+    <button id="cafe" class="categories" type="button" >
+        <img id="coffeeCup" src="./images/coffee-cup.svg" >
+        <div class="rgba"><p>coffee shops</p></div>
+    </button>
+    <button id="park" class="categories" type="button">
+        <img  id="parks" src="./images/park.svg" >
+        <div class="rgba"><p>parks</p></div>
+    </button>
+    <button id="restaurant" class="categories"  type="button" >
+        <img  id="tray" src="./images/tray.svg" >
+        <div class="rgba"><p>restaurants</p></div>
+    </button>
   </div>
 </section>
 
-<form class="search-form" action="" method="get">
-  <label for="search-inp" >. <input list="data" class="form-search" type="text" name="saerch" id="search" placeholder="Search" autocomplete="on"></label>
-  <datalist id="data" >
+<section class="search-section">
+    <h2> <span class="fas fa-search "></span> Search about place</h2>
+    <form class="search-form" action="" method="get">
+        <label for="search-input" >
+            <input list="data" class="search-input" type="text" name="saerch" id="search" placeholder="Type here to search.." autocomplete="on">
+        </label>
+        <datalist id="data" ></datalist>
+    </form>
+</section>
 
-  </datalist>
-</form>
-
-            <div class="reviews-section">
-                <div class="review">
-                    {{#each response}}
-                        <h3> <a href="/user_profile" id="{{username}}" >@{{username}}</a></h3>
-                        <p>content: {{content}}</p>
-                        <h3><a href="/business_page" >name business: {{name}}</a></h3>
-                        <h3>evaluation: {{evaluation}}/5</h3>
-                        <button id="show-comments" class="fas fa-comments">comments</button>
-                    {{/each}}
-                    <h3>comment : </h3>
-                    <div class="comments">
-                        <button class="add-comment fas fa-plus-square">Add new</button>
-                        <div class="add-comment">
-                            <label for="comment">
-                                <input type="text" name="comment" id="comment-input">
-                            </label>
-                            <button type="submit" id="send-button">add comment</button>
-                        </div>  
-                    </div>
+<div class="reviews-section">
+    <div class="review">
+        {{#each response}}
+            <div class="result">
+                <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" >{{username}}</a></h3>
+                <p class="evaluation-content">{{content}}</p>
+                <div class="review-footer">
+                    <h3 class="business"><a href="/business?name={{name}}" >@ {{name}}</a></h3>
+                    <p id="evaluation">{{evaluation}}</p>
+                    <ul class="stars">
+                        <li id="one-star" class=" fa fa-star"></li>
+                        <li id="two-star" class=" fa fa-star"></li>
+                        <li id="three-star" class=" fa fa-star"></li>
+                        <li id="four-star" class="fa fa-star"></li>
+                        <li id="five-star " class="fa fa-star"></li>
+                    </ul>
                 </div>
-                
             </div>
+        {{/each}}
+    </div>
+</div>

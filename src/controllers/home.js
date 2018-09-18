@@ -10,7 +10,7 @@ exports.get = (req, res, next) => {
   getReviews()
     .then((response) => {
       res.render('home', {
-        style: 'style', title: 'Home', dom: 'home', isUser, userName, response,
+        style: 'style', style_special: 'home', title: 'Home', dom: 'home', isUser, userName, response,
       });
     })
     .catch(err => next(err));

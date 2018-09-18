@@ -7,7 +7,7 @@
             <div id="sidebar">
                 <ul>
                     {{#if isUser}}
-                        <a href="#" class="sidebar-link">{{userName}}</a>
+                        <a href="#" class="sidebar-link"><span class="fas fa-user-circle"></span>{{userName}}</a>
                         <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
                         <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
                         <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
@@ -23,7 +23,9 @@
             </div>
             <div id="toggle-btn" onclick="toggleSidebar(this)">
                 {{#if  isUser}}
-                    <p class="fas fa-user-circle"></p>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 {{else}}
                     <span></span>
                     <span></span>
