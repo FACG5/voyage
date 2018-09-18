@@ -13,6 +13,30 @@ const checkUser = email => new Promise((resolve, reject) => {
   });
 });
 
+const getName = (type, id) => new Promise((resolve, reject) => {
+  let sql;
+  if (type === 'person') {
+    sql = {
+      text: 'SELECT username FROM person WHERE user_id=$1;',
+      values: [id],
+    };
+  } else {
+    sql = {
+      text: 'SELECT name FROM business WHERE user_id=$1;',
+      values: [id],
+    };
+  }
+  dbConnection.query(sql, (error, res) => {
+    if (error) {
+      return reject(error);
+    }
+    if (type === 'person') {
+      return resolve(res.rows[0].username);
+    }
+    return resolve(res.rows[0].name);
+  });
+});
+
 module.exports = {
-  checkUser,
+  checkUser, getName,
 };

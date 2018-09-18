@@ -6,18 +6,32 @@
         <div class="sidebar">
             <div id="sidebar">
                 <ul>
-                    <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
-                    <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
-                    <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
-                    <a href="/sign_in" class="sidebar-link"><li><span class="fas fa-sign-in-alt"></span>sign in</li></a>
-                    <a href="/sign_up" class="sidebar-link"><li><span  class="fas fa-user-plus"></span>sign up</li></a>
-                </ul>
+                    {{#if isUser}}
+                        <a href="#" class="sidebar-link">{{userName}}</a>
+                        <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
+                        <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
+                        <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
+                        <a href="/sign_out" class="sidebar-link"><li><span class="fas fa-sign-out-alt"></span>sign out</li></a>
+                    {{else}}
+                        <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
+                        <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
+                        <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
+                        <a href="/sign_in" class="sidebar-link"><li><span class="fas fa-sign-in-alt"></span>sign in</li></a>
+                        <a href="/sign_up" class="sidebar-link"><li><span  class="fas fa-user-plus"></span>sign up</li></a>
+                    {{/if}}
+                 </ul>
             </div>
             <div id="toggle-btn" onclick="toggleSidebar(this)">
-                <span></span>
-                <span></span>
-                <span></span>
-        </div>
+                {{#if  isUser}}
+                    <p class="fas fa-user-circle"></p>
+                {{else}}
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                {{/if}}
+
+            </div>
+
         </div>
     </div>
 
