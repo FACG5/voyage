@@ -155,12 +155,14 @@ main{
     }
     .fa-star{
         color: #ffffff;
-        border:solid 1px #E5E5E5;
+        background: none;
+        border: none;
         font-size:20px;
         text-shadow: 1px 1px  rgba(110, 120, 136, 0.9);
     }
     .checked {
-        color: yellow !important;
+        color: #FFE603 !important;
+        background: none;
     }
 }
 
@@ -280,12 +282,13 @@ main{
     }
     .fa-star{
         color: #ffffff;
-        border:solid 1px #E5E5E5;
+        background: none;
+        border: none;
         font-size:20px;
         text-shadow: 1px 1px  rgba(110, 120, 136, 0.9);
     }
     .checked {
-        color: yellow !important;
+        color: #FFE603 !important;
     }
    }
 
@@ -405,11 +408,12 @@ main{
 }
 .fa-star{
     color: #ffffff;
-    border:solid 1px #E5E5E5;
+    background: none;
+    border: none;
     font-size:20px;
     text-shadow: 1px 1px  rgba(110, 120, 136, 0.9);
 }
 .checked {
-    color: yellow !important;
+    color: #FFE603 !important;
 }
 }

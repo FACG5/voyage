@@ -61,7 +61,7 @@
         font-size:16px;
     }
     .search-section .search-input{
-      background: none;
+      background: #fff;
       border-radius:20px;
       outline:none;
       letter-spacing: 1px;
@@ -76,7 +76,7 @@
       margin: 0px auto 20px auto;
       height:40px;
       padding:5px 20px;
-      box-shadow: 1px 1px 1px rgba(110, 120, 136, 0.9);
+      box-shadow: 3px 3px 3px rgba(110, 120, 136, 0.9);
   }
 }
 
@@ -138,7 +138,7 @@
         font-size: 20px;
     }
     .search-section .search-input{
-      background: none;
+      background: #fff;
       border-radius:20px;
       outline:none;
       letter-spacing: 1px;
@@ -153,7 +153,7 @@
       margin: 0px auto 20px auto;
       height: 50px;
       padding:5px 20px;
-      box-shadow: 1px 1px 1px rgba(110, 120, 136, 0.9);
+      box-shadow: 3px 3px 3px rgba(110, 120, 136, 0.9);
   }
 }
 
@@ -217,7 +217,7 @@
           font-size: 20px;
       }
       .search-section .search-input{
-        background: none;
+        background: #fff;
         border-radius:20px;
         outline:none;
         letter-spacing: 1px;
@@ -232,7 +232,7 @@
         margin: 0px auto 20px auto;
         height: 50px;
         padding:5px 20px;
-        box-shadow: 1px 1px 1px rgba(110, 120, 136, 0.9);
+        box-shadow: 3px 3px 3px rgba(110, 120, 136, 0.9);
 
     }
     .reviews-section{
@@ -248,12 +248,30 @@
         width:100%;
         margin: 0px auto 20px auto;
         border-radius: 10px;
+        padding: 20px;
+        line-height:2;
+    }
+    .result .user{
+        text-transform: capitalize;
+    }
+    .result .business{
+        background:#FCD271;
+        padding: 5px 10px;
+        width:70%;
+        border-radius: 15px; 
+    }
+    .evaluation-content{
+        margin: 5px auto 15px auto;
+        padding: 10px;
+        border-radius: 5px;
+        border:solid 0.5px #52C2E6;
     }
     #evaluation{
         display: none;
     }
     .review-footer{
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 40% 40%;
+        grid-column-gap: 20%;
     }
 }

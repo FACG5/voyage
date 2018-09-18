@@ -30,11 +30,11 @@
     <div class="review">
         {{#each response}}
             <div class="result">
-                <h3> <a href="/user_profile/{{username}}" id="{{username}}" >{{username}}</a></h3>
-                <p>{{content}}</p>
+                <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" >{{username}}</a></h3>
+                <p class="evaluation-content">{{content}}</p>
                 <div class="review-footer">
-                    <h3><a href="/business?name={{name}}" >@ {{name}}</a></h3>
-                    <h3  id="evaluation">{{evaluation}}</h3>
+                    <h3 class="business"><a href="/business?name={{name}}" >@ {{name}}</a></h3>
+                    <p id="evaluation">{{evaluation}}</p>
                     <ul class="stars">
                         <li id="one-star" class=" fa fa-star"></li>
                         <li id="two-star" class=" fa fa-star"></li>
