@@ -13,6 +13,10 @@
         {{>footer}}
     </body>
 
+    {{#if vald}}
+    <script src="/js/{{vald}}.js"></script>
+    {{/if}}
+
     {{#if dom}}
         <script src="/js/{{dom}}.js"></script>
     {{/if}}
