@@ -1,19 +1,21 @@
 <div id=business" class="business">
 
-    {{#if error_message}}
-        <span class="error-message">{{error_message}}</span>
+    {{#if errorMessage}}
+        <span class="error-message">{{errorMessage}}</span>
     {{else}}
-    <div class="title">
-        <h1><span id="name-business">{{name}}</span> {{category}}</h1>
-        <h3>@{{name}}</h3>
+    
+    <div class="header-page">
+        <div class="title">
+            <h1><span id="name-business">{{name}}</span> {{category}}</h1>
+            <h3>@{{name}}</h3>
+        </div>
+        <div class="avg-evaluation">
+            <h3>Avg Evaluation : {{avarage}}/5 </h3>
+        </div>
+        <div class="img">
+            <img src="{{img}}">
+        </div>
     </div>
-    <div class="avg-evaluation">
-        <h3>Avg Evaluation : {{avg}}/5 </h3>
-    </div>
-    <div class="img">
-        <img src="{{img}}">
-    </div>
-
 
     {{#if isPerson}}
         <div class="add-review">
@@ -34,7 +36,8 @@
                     <button type="submit" id="send-button">Send</button>
                 </div>
             </div>
-        </div>
+            </div>
+        </div>    
     {{/if}}
 
     <div id="info">
