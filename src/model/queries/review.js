@@ -23,11 +23,11 @@ const getComments = reviewId => new Promise((resolve, reject) => {
 
 const getReviewsByBusiness = businessId => new Promise((resolve, reject) => {
   const sql = {
-    text: 'SELECT person.username, allDataReview.* FROM '
+    text: 'SELECT person.username, alldata.* FROM '
       + '(SELECT review.*,eval.avg FROM '
       + '(SELECT business_id,ROUND(AVG(evaluation)) AS avg FROM review GROUP BY business_id)'
       + 'eval JOIN review on review.business_id=eval.business_id WHERE review.business_id=$1)'
-      + 'allDataReview LEFT JOIN person ON person.id = allDataReview.person_id ORDER BY allDataReview.id DESC',
+      + 'alldata LEFT JOIN person ON person.id = alldata.person_id ORDER BY alldata.id DESC',
     values: [businessId],
   };
   dbConnection.query(sql, (error, res) => {
@@ -39,7 +39,7 @@ const getReviewsByBusiness = businessId => new Promise((resolve, reject) => {
 const setReview = (idPerson, idBusiness, content, evaluation) => new Promise((resolve, reject) => {
   const sql = {
     text: 'INSERT INTO review (person_id, business_id, content, evaluation) VALUES ($1,$2,$3,$4)',
-    values: [parseInt(idPerson), parseInt(idBusiness), content, parseInt(evaluation)],
+    values: [idPerson, idBusiness, content, evaluation],
   };
   dbConnection.query(sql, (error, res) => {
     if (error) return reject(error);

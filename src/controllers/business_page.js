@@ -39,6 +39,7 @@ exports.get = (req, res, next) => {
                 description,
                 img,
                 category,
+                personAddReview: 'business_add_review',
               });
             } else {
               res.render('business_page', {
@@ -54,6 +55,7 @@ exports.get = (req, res, next) => {
                 description,
                 img,
                 category,
+                personAddReview: 'business_add_review',
               });
             }
           })
@@ -84,7 +86,7 @@ exports.post = (req, res, next) => {
       getPerson(name)
         .then((responsePerson) => {
           const idPerson = responsePerson[0].id;
-          setReview(idPerson, idBusiness, text, evaluation)
+          setReview(idPerson, idBusiness, text, parseInt(evaluation, 10))
             .then((response) => {
               res.send({ username: name });
             })

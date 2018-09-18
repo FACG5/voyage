@@ -4,7 +4,7 @@
         <span class="error-message">{{error_message}}</span>
     {{else}}
     <div class="title">
-        <h1>{{name}} {{category}}</h1>
+        <h1><span id="name-business">{{name}}</span> {{category}}</h1>
         <h3>@{{name}}</h3>
     </div>
     <div class="avg-evaluation">
@@ -24,13 +24,16 @@
             </div>
 
             <div class="foot-review">
-                <div class="star">
-                    <input type="number"  id="evaluation" max="5" min="0">
-                </div>
+                <ul class="stars">
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                    <li class="fa fa-star"></li>
+                </ul>
                 <div class="send">
                     <button type="submit" id="send-button">Send</button>
                 </div>
-
             </div>
         </div>
     {{/if}}

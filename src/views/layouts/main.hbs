@@ -12,7 +12,13 @@
 
         {{>footer}}
     </body>
+
     {{#if dom}}
-    <script src="/js/{{dom}}.js"></script>
+        <script src="/js/{{dom}}.js"></script>
     {{/if}}
+
+    {{#if isPerson }}
+        <script src="/js/{{personAddReview}}.js"></script>
+    {{/if}}
+
 </html>

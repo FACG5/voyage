@@ -1,5 +1,5 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
+
 
 const router = express.Router();
 
@@ -15,8 +15,8 @@ const about = require('./about_us');
 
 const checkauth = require('../middlewares/checkauth');
 
-router.use(cookieParser());
-router.use(checkauth.isSingIn);
+
+router.use(checkauth.isSignIn);
 
 router.get('/', home.get); // router [/] Home Page
 
