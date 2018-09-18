@@ -11,7 +11,7 @@ CREATE TABLE users (
 
 CREATE TABLE person (
 	id serial PRIMARY KEY,
-	user_id integer NOT NULL REFERENCES users(id) ON UPDATE CASCADE,
+	user_id integer REFERENCES users(id) ON UPDATE CASCADE,
 	username varchar NOT NULL UNIQUE,
 	first_name varchar NOT NULL,
 	last_name varchar NOT NULL,
@@ -21,7 +21,7 @@ CREATE TABLE person (
 
 CREATE TABLE business (
 	id serial PRIMARY KEY,
-	user_id integer NOT NULL REFERENCES users(id) ON UPDATE CASCADE,
+	user_id integer  REFERENCES users(id) ON UPDATE CASCADE,
 	name varchar NOT NULL UNIQUE,
 	address TEXT NOT NULL,
 	description TEXT NOT NULL,
