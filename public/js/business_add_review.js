@@ -1,11 +1,10 @@
 const sendButton = getElement('send-button');
 const textReview = getElement('text-review');
-// const evaluation = getElement('evaluation');
 const currentData = getElement('current-data');
 const nameBusiness = getElement('name-business');
 
 const stars = document.querySelectorAll('.stars li');
-let eval = 0;
+let evaluation = 0;
 
 const zeroStar =() =>{
     stars.forEach(item => item.style.color = '#000000');
@@ -16,7 +15,7 @@ const setStar = (num) => {
     for (let i = 0; i <= num; i++) {
         stars[i].style.color = '#FFE603';
     }
-    eval = num + 1;
+    evaluation = num + 1;
 };
 
 stars[0].addEventListener('click', () => {
@@ -47,7 +46,7 @@ sendButton.addEventListener('click', (e) => {
     }
     const object = {
         text: textReview.value,
-        evaluation: eval,
+        evaluation: evaluation,
         nameBusiness: nameBusiness.textContent,
     };
 
@@ -63,7 +62,7 @@ sendButton.addEventListener('click', (e) => {
             zeroStar();
             create('a', response.username);
             create('p', object.text);
-            create('p', `${eval.toString()}/5`);
+            create('p', `${evaluation.toString()}/5`);
             const hr = document.createElement('hr');
             currentData.appendChild(hr);
         })

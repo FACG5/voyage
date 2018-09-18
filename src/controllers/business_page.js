@@ -20,17 +20,18 @@ exports.get = (req, res, next) => {
         const {
           id, address, description, img, category,
         } = response[0];
-        let avg = 0;
+        let avarage = 0;
         getReviewsByBusiness(id)
           .then((responseReview) => {
             if (responseReview.length !== 0) {
-              avg = responseReview[0].avg;
+              const { avg } = responseReview[0];
+              avarage = avg;
               res.render('business_page', {
                 userName,
                 isUser,
                 isPerson,
                 responseReview,
-                avg,
+                avarage,
                 style: 'style',
                 title: name,
                 dom: 'business_page',
@@ -46,7 +47,7 @@ exports.get = (req, res, next) => {
                 userName,
                 isUser,
                 isPerson,
-                avg,
+                avarage,
                 style: 'style',
                 title: name,
                 dom: 'business_page',
