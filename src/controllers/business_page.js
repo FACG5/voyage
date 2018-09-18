@@ -67,7 +67,6 @@ exports.get = (req, res, next) => {
           errorMessage,
           style: 'style',
           title: 'business',
-          dom: 'business_page',
         });
       }
     })

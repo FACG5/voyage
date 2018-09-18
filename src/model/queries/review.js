@@ -2,7 +2,8 @@ const dbConnection = require('../database/db_connection');
 
 const getReviews = () => new Promise((resolve, reject) => {
   const sql = {
-    text: 'SELECT review.id, review.content , review.evaluation , person.username , business.name FROM review JOIN person on review.person_id=review.person_id JOIN business on review.business_id=business.id ORDER BY review.id desc',
+    text: 'SELECT review.id, review.content , review.evaluation , person.username , business.name FROM review JOIN person on '
+    + 'review.person_id=person.id JOIN business on review.business_id=business.id ORDER BY review.id desc',
   };
   dbConnection.query(sql, (error, res) => {
     if (error) return reject(error);
