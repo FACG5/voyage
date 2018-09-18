@@ -1,4 +1,4 @@
-/* eslint-disable no-restricted-globals */
+
 const tape = require('tape');
 const runDbBuild = require('../src/model/database/db_build');
 const { addUser } = require('../src/model/queries/users');
@@ -16,7 +16,7 @@ tape('Test for the addUser function', (t) => {
     const data = { email: 's@s.s', type: 0 };
     addUser(data, '$2b$10$c.DoRIXXMC9fzgwWlg37oOErCFNXFTRNExHYLvq93DCHqbIkNZUb2')
       .then((response) => {
-        t.equal(isNaN(response.rows[0].id), false, 'addUser function returns id successfuly');
+        t.equal(typeof response.rows[0].id, 'number', 'addUser function returns id successfuly');
         t.equal(response.command, 'INSERT', 'Data have been inserted successfuly to users TABLE');
       })
       .catch(error => t.error(error));
