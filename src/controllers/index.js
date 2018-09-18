@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const router = express.Router();
-
+const categories = require('./categories');
 const home = require('./home');
 const signUp = require('./sign_up');
 const signIn = require('./sign_in');
@@ -10,8 +10,6 @@ const signIn = require('./sign_in');
 const business = require('./business_page');
 const error = require('./error');
 const signOut = require('./sign_out');
-const business = require('./business_page');
-const error = require('./error');
 const contact = require('./contact_us');
 const about = require('./about_us');
 
@@ -24,8 +22,7 @@ router.use(checkauth.isSingIn);
 router.get('/', home.get); // router [/] Home Page
 router.post('/', home.post);
 
-router.get('/business', business.get);
-router.post('reviews', business.post);s
+
 router.get('/contact_us', contact.get);
 
 router.get('/about_us', about.get);
