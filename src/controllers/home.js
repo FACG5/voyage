@@ -2,10 +2,15 @@ const { getSearch } = require('../model/queries/business');
 const { getReviews } = require('../model/queries/review');
 
 exports.get = (req, res, next) => {
+  let userName = '';
+  const { isUser } = req;
+  if (isUser) {
+    userName = req.data.name;
+  }
   getReviews()
     .then((response) => {
       res.render('home', {
-        style: 'style', title: 'Home', dom: 'home', response,
+        style: 'style', title: 'Home', dom: 'home', isUser, userName, response,
       });
     })
     .catch(err => next(err));
@@ -26,8 +31,8 @@ exports.post = (req, res, next) => {
 };
 
 exports.postReviews = (req, res) => {
-     const { review } = req.body.content;
-    getReviews(review)
-  .then(res.send(review))
-  .catch(err => res.send(`Fild : ${err}`));
+  const { review } = req.body.content;
+  getReviews(review)
+    .then(res.send(review))
+    .catch(err => res.send(`Fild : ${err}`));
 };
