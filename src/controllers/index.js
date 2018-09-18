@@ -13,6 +13,7 @@ const error = require('./error');
 const contact = require('./contact_us');
 const about = require('./about_us');
 
+const userProfile = require('./user_profile');
 const checkauth = require('../middlewares/checkauth');
 
 router.use(cookieParser());
@@ -25,6 +26,8 @@ router.post('/', home.post);
 router.get('/contact_us', contact.get);
 
 router.get('/about_us', about.get);
+
+router.get('/user_profile/:username', userProfile.get);
 
 router.get('/sign_up', signUp.get); // router sign_up Page (git)
 router.post('/sign_up', signUp.post);
