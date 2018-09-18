@@ -1,64 +1,59 @@
 <div class="switch">
-    <button id="personbtn" class="but-person" >Person</button>
-    <button id="businessbtn"class="but-business" >Business</button>
+    <button id="person-btn" class="but-person" >Person</button>
+    <button id="business-btn"class="but-business" >Business</button>
 </div>
+<p>message{{message}}</p>
 
-<div  id="persondiv" class="div-person" >
+<div  id="person-div" class="div-person" >
+
     <label for="email">
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="email" id="person-email" placeholder="Email" required>
     </label>
-
     <label for="username">
-        <input type="text" id="username" placeholder="Username" required>
+        <input type="text" id="user-name" placeholder="Username" required>
     </label>
-
     <label for="pass">
-        <input type="password" id="pass" placeholder="Password" required>
+        <input type="password" id="person-pass" placeholder="Password" required>
     </label>
-
     <label for="confpass">
-        <input type="password" id="confpass" placeholder="Confirm password" required>
+        <input type="password" id="person-confpass" placeholder="Confirm password" required>
     </label>
-
     <label for="f-name">
         <input type="text" id="f-name" placeholder="First name" required>
     </label>
-
     <label for="l-name">
         <input type="text" id="l-name" placeholder="Last name" required>
     </label>
-
+     <p id="person-err" class="errorValid"></p>
     <br>
-    <label for="gender">Gender :
-        <input type="radio" name="gender" value="male"> Male
-        <input type="radio" name="gender" value="female"> Female
+    <label for="gender" >Gender :
+        <input type="radio" id="male" name="gender" value="male"> Male
+        <input type="radio" id="female" name="gender" value="female"> Female
     </label>
     <br>
 
     <label for="birth"> Birth :
-        <input type="date" id=birth" required>
+        <input type="date" id="birth" required>
     </label>
 
-    <button type="submit" id="send-person">Send</button>
-
+    <button type="submit" id="person-send">Send</button>
 </div>
 
-
-<div id="businessdiv"class="div-business"  style="display: none">
+<div id="business-div"class="div-business"  style="display: none">
     <label for="email">
-        <input type="email" id="email" placeholder="Email" required>
+        <input type="email" id="business-email" placeholder="Email" required>
     </label>
 
     <label for="name">
-        <input type="text" id="name" placeholder="Business name" required>
+        <input type="text" id="business-name" placeholder="Business name" required>
     </label>
 
     <label for="pass">
-        <input type="password" id="pass" placeholder="Password" required>
+        <input type="password" id="business-pass" placeholder="Password" required>
     </label>
 
     <label for="confpass">
-        <input type="password" id="confpass" placeholder="Confirm password" required>
+        <input type="password" id="business-confpass" placeholder="Confirm password" required>
     </label>
 
     <label for="address">
@@ -68,28 +63,18 @@
     <label for="description">
         <input type="text" id="description" placeholder="Description" required>
     </label>
+    <label for="select menu" >
+      <select id="category">
+        <option value="restaurant">restaurant</option>
+        <option value="cafe">cafe</option>
+        <option value="park">park</option>
+      </select>
+    </label>
 
     <label for="image"> image :
         <input type="url" id="image" required>
     </label>
+    <p id="business-err" class="errorValid"></p>
 
-    <button type="submit" id="send-business">Send</button>
-
+    <button type="submit" id="busines-send">Send</button>
 </div>
-
-
-<script>
-    const personbtn =document.getElementById('personbtn');
-    const persondiv =document.getElementById('persondiv');
-    const businessbtn =document.getElementById('businessbtn');
-    const businessdiv =document.getElementById('businessdiv');
-
-    personbtn.addEventListener('click',(e)=>{
-        persondiv.style.display='block';
-        businessdiv.style.display='none';
-    })
-    businessbtn.addEventListener('click',(e)=>{
-        businessdiv.style.display='block';
-        persondiv.style.display='none';
-    })
-</script>
