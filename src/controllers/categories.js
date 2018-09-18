@@ -1,4 +1,5 @@
-const { getCategories } = require('../model/queries/get_data');
+
+const { getAvg } = require('../model/queries/review');
 
 exports.get = (req, res, next) => {
   let userName = '';
@@ -7,7 +8,8 @@ exports.get = (req, res, next) => {
     userName = req.data.name;
   }
   const { category } = req.params;
-  getCategories(category)
+
+  getAvg(category)
     .then((response) => {
       res.render('category', {
         style: 'style',

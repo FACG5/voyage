@@ -42,7 +42,6 @@ router.get('/business', business.get);
 router.get('/sign_out', signOut.signout);
 
 
-
 router.use(error.client);
 router.use(error.server);
 module.exports = router;
