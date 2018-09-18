@@ -22,19 +22,17 @@ exports.post = (request, response) => {
             const userId = result.rows[0].id;
             if (type === 0) { // type = 0 represents person
               addPerson(userId, data)
-                .then(() => {
+                .then((res) => {
                   response.send({ message: 'Person has been added successful', pass: true });
-                }).catch(() => {
-                  response.send({ message: ' email already exists', pass: false });
+                }).catch((res) => {
+                  response.send({ message: ' username already token', pass: false });
                 });
             } else if (type === 1) { // type = 1 represents business
               addBusiness(userId, data)
                 .then(() => {
-                  console.log('Business has been added successful');
                   response.send({ message: 'Business has been added successful', pass: true });
                 }).catch(() => {
-                  response.send({ message: ' email already exists', pass: false });
-                  console.log('email already exists near catch addBusiness');
+                  response.send({ message: 'Business name already exists', pass: false });
                 });
             }
           })

@@ -111,7 +111,7 @@ personSendBtn.addEventListener('click', () => {
         alert(message);
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => alert('ERROR :',error));
 });
 
 businessSendBtn.addEventListener('click', () => {
@@ -140,9 +140,9 @@ businessSendBtn.addEventListener('click', () => {
       if (pass) {
         alert(message);
         window.location = '/sign_in';
-      } else if(!pass) {
+      } else if (!pass) {
         alert(message);
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => alert('ERROR :',error));
 });
