@@ -1,6 +1,6 @@
 const { verify } = require('jsonwebtoken');
 
-exports.isSingIn = (req, res, next) => {
+exports.isSignIn = (req, res, next) => {
   req.isUser = false;
   const { jwt } = req.cookies;
   if (jwt) {

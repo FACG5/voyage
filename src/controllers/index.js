@@ -1,5 +1,4 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
 
 const router = express.Router();
 
@@ -16,8 +15,8 @@ const about = require('./about_us');
 const userProfile = require('./user_profile');
 const checkauth = require('../middlewares/checkauth');
 
-router.use(cookieParser());
-router.use(checkauth.isSingIn);
+
+router.use(checkauth.isSignIn);
 
 router.get('/', home.get); // router [/] Home Page
 
@@ -38,6 +37,7 @@ router.post('/sign_in', signIn.post); // router sign_in Page (post)
 router.get('/categories/:category', categories.get);
 
 router.get('/business', business.get);
+router.post('/business', business.post);
 
 router.get('/sign_out', signOut.signout);
 
