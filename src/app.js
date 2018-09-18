@@ -2,7 +2,10 @@ const express = require('express');
 const handlebars = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 const router = require('./controllers');
+
 
 const app = express();
 
@@ -22,6 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
+app.use(cookieParser());
 app.use(router);
 
 module.exports = app;

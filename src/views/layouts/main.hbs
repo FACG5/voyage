@@ -12,13 +12,21 @@
 
         {{>footer}}
     </body>
+
     {{#if vald}}
     <script src="/js/{{vald}}.js"></script>
     {{/if}}
+
     {{#if dom}}
-    <script src="/js/{{dom}}.js"></script>
+        <script src="/js/{{dom}}.js"></script>
     {{/if}}
+
+    {{#if isPerson }}
+        <script src="/js/{{personAddReview}}.js"></script>
+    {{/if}}
+
     {{#if script}}
     <script src="/js/{{script}}.js"></script>
     {{/if}}
+
 </html>
