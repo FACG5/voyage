@@ -4,9 +4,13 @@ const { addPerson } = require('../model/queries/person');
 const { addBusiness } = require('../model/queries/business');
 
 exports.get = (req, res) => {
-  res.render('sign_up', {
-    style: 'style', dom: 'sign_up', vald: 'validation', title: 'sign up',
-  });
+  if (req.isUser) {
+    res.redirect('/');
+  } else {
+    res.render('sign_up', {
+      style: 'style', dom: 'sign_up', title: 'sign up', vald: 'validation'
+    });
+  }
 };
 
 exports.post = (request, response) => {
@@ -22,9 +26,9 @@ exports.post = (request, response) => {
             const userId = result.rows[0].id;
             if (type === 0) { // type = 0 represents person
               addPerson(userId, data)
-                .then((res) => {
+                .then(() => {
                   response.send({ message: 'Person has been added successful', pass: true });
-                }).catch((res) => {
+                }).catch(() => {
                   response.send({ message: ' username already token', pass: false });
                 });
             } else if (type === 1) { // type = 1 represents business
