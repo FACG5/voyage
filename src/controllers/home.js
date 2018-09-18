@@ -8,7 +8,7 @@ exports.get = (req, res, next) => {
     userName = req.data.name;
   }
   getReviews()
-    .then((response) => {
+    .then((response) => {   
       res.render('home', {
         style: 'style', style_special: 'home', title: 'Home', dom: 'home', isUser, userName, response,
       });
