@@ -1,9 +1,9 @@
 <section class="category-section">
   <h2><span>top</span> Options for your choice</h2>
-  <div class="cat-result">
+  <div class="cat-result" >
     {{#each response}}
       <div class="cat-result-pic" >
-        <img class="cat-photo" src="{{img}}">
+        <img class="cat-photo"  id="{{name}}" src="{{img}}">
         <div class="cat-data">
           <h2 class="cat-name">{{name}}</h2>
           <h3>Avg Evaluation : {{avg}}/5 </h3>
@@ -14,7 +14,7 @@
           <span class="fa fa-star"></span>
         </div>
       </div>
-      <div class="rgba" id="{{name}}"></div>
+    
     {{/each}}
   </div>
 </section>
