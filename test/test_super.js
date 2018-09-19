@@ -29,10 +29,10 @@ test('contact_us route with get method returns a status code of 200', (t) => {
     .expect('Content-Type', /html/)
     .end((err, res) => {
       if (err) t.error(err);
-      t.equal(res.text.includes('contact-section'), true, 'the page should have contact-section class');
-      t.equal(res.text.includes('map-rgba'), true, 'the page should have map-rgba class');
-      t.equal(res.text.includes('contact-form'), true, 'the page should have contact-form class');
-      t.equal(res.text.includes('contact-icons'), true, 'the page should have contact-icons class');
+      t.equal(res.text.includes('<div class="contact-section" >'), true, 'the page should have contact-section class');
+      t.equal(res.text.includes('<div class="map-rgba"></div>'), true, 'the page should have map-rgba class');
+      t.equal(res.text.includes('<div class="contact-form">'), true, 'the page should have contact-form class');
+      t.equal(res.text.includes('<div class="contact-icons">'), true, 'the page should have contact-icons class');
       t.equal(res.text.includes('voyage@outlook.ps'), true, 'response should contain \'voyage@outlook.ps\'');
       t.equal(res.text.includes('Enter Your Message Here ..'), true, 'response should contain \'Enter Your Message Here ..\'');
       t.equal(res.text.includes('+9725920737272'), true, 'response should contain \'+9725920737272\'');
@@ -40,30 +40,54 @@ test('contact_us route with get method returns a status code of 200', (t) => {
     });
 });
 
-test('Home route with get method returns a status code of 200 ', (t) => {
+test('about_us route with get method returns a status code of 200 ', (t) => {
   supertest(app)
     .get('/about_us')
     .expect(200)
     .expect('Content-Type', /html/)
-    .end((err) => {
+    .end((err, res) => {
       if (err) t.error(err);
+      t.equal(res.text.includes('<div class="about-idea">'), true, 'the page should have about-idea class');
+      t.equal(res.text.includes('<div class="about-team">'), true, 'the page should have about-team class');
       t.end();
     });
 });
 
-
-test('Home route with get method returns a status code of 200 ', (t) => {
+test('/categories/restaurant route with get method returns a status code of 200 ', (t) => {
   supertest(app)
-    .get('/about_us')
+    .get('/categories/restaurant')
     .expect(200)
     .expect('Content-Type', /html/)
-    .end((err) => {
+    .end((err, res) => {
       if (err) t.error(err);
+      t.equal(res.text.includes('<title>restaurant</title>'), true, 'the page should have title \'restaurant\'');
+      t.end();
+    });
+});
+test('/categories/park route with get method returns a status code of 200 ', (t) => {
+  supertest(app)
+    .get('/categories/park')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.text.includes('<title>park</title>'), true, 'the page should have title \'park\'');
       t.end();
     });
 });
 
-test('Home route with get method returns a status code of 200 ', (t) => {
+test('/categories/cafe route with get method returns a status code of 200 ', (t) => {
+  supertest(app)
+    .get('/categories/cafe')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.text.includes('<title>cafe</title>'), true, 'the page should have title \'cafe\'');
+      t.end();
+    });
+});
+test('sign_up route with get method returns a status code of 200 ', (t) => {
   supertest(app)
     .get('/sign_up')
     .expect(200)
@@ -74,13 +98,91 @@ test('Home route with get method returns a status code of 200 ', (t) => {
     });
 });
 
-test('Home route with get method returns a status code of 200 ', (t) => {
+test('sign_in route with get method returns a status code of 200 ', (t) => {
   supertest(app)
-    .get('/bu')
+    .get('/sign_in')
     .expect(200)
     .expect('Content-Type', /html/)
     .end((err) => {
       if (err) t.error(err);
+      t.end();
+    });
+});
+
+test('user_profile route with get method returns a status code of 200 ', (t) => {
+  supertest(app)
+    .get('/user_profile/asmaa')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.text.includes('<h2><a href="/user_profile/asmaa" id="asmaa" >@asmaa</a></h2>'), true, 'the page should contain user name  \'@asmaa\' ');
+      t.end();
+    });
+});
+
+test('user_profile of unknown user route with get method returns a status code of 404 ', (t) => {
+  supertest(app)
+    .get('/user_profile/asmsdgdaa')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.text.includes('Sorry User not Found !'), true, 'the page should have \'Sorry User not Found !\' ');
+      t.end();
+    });
+});
+
+test('business route with get method returns a status code of 200 ', (t) => {
+  supertest(app)
+    .get('/business')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.text.includes('sorry the business not found'), true, 'the page should have \'sorry the business not found\' ');
+      t.end();
+    });
+});
+
+test('business route with get method returns a status code of 200 ', (t) => {
+  supertest(app)
+    .get('/business?name=mazaj')
+    .expect(200)
+    .expect('Content-Type', /html/)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.text.includes('<textarea placeholder="Add your opinion .." id="text-review"></textarea>'), true, 'the header should contain review form');
+      t.end();
+    });
+});
+
+test('sign_out route with get method returns a status code of 302 & redirect to home page ', (t) => {
+  supertest(app)
+    .get('/sign_out')
+    .expect(302)
+    .end((err, res) => {
+      if (err) t.error(err);
+      t.equal(res.headers.location, '/', 'respons should redirect to home page');
+      t.end();
+    });
+});
+
+test('sign_in route with post method', (t) => {
+  supertest(app)
+    .post('/sign_in')
+    .send({
+      username: 'asmaa@gmail.com',
+      password: '000',
+    })
+    .expect(200)
+    .expect('Content-Type', 'application/json')
+    .end((err, res) => {
+      t.error(err);
+      t.deepEqual(res.body, {
+        err: null,
+        res: 'pass',
+      }, 'response should contain object');
       t.end();
     });
 });

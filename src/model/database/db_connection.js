@@ -5,9 +5,9 @@ require('env2')('./config.env');
 let dbUrl = '';
 
 if (process.env.NODE_ENV === 'test') {
-  dbUrl = process.env.TEST_DB_URL;
-} else {
   dbUrl = process.env.DB_URL;
+} else {
+  dbUrl = process.env.TEST_DB_URL;
 }
 
 if (!dbUrl) throw new Error('Can not found the DB_URL!');
