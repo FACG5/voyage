@@ -1,6 +1,9 @@
 {
   "name": "voyage",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "App to collect all entertainments places at Gaza",
   "main": "index.js",
   "directories": {

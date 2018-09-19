@@ -7,7 +7,7 @@ const stars = document.querySelectorAll('.stars li');
 let evaluation = 0;
 
 const zeroStar =() =>{
-    stars.forEach(item => item.style.color = '#000000');
+    stars.forEach(item => item.style.color = '#FFFFFF');
 };
 
 const setStar = (num) => {

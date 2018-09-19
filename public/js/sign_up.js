@@ -92,7 +92,7 @@ personSendBtn.addEventListener('click', () => {
     lName: lName.value,
     gender,
     birthDay: personBirthDay.value,
-    type: 0,
+    type: 'person',
   };
   fetch('/sign_up', {
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -124,7 +124,7 @@ businessSendBtn.addEventListener('click', () => {
     businessDescription: businessDescription.value,
     businessCategory,
     image: imageUrl.value,
-    type: 1,
+    type: 'business',
   };
 
   fetch('/sign_up', {
