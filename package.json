@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "NODE_ENV=test node test/test.js",
+    "dbtest": "NODE_ENV=test node test/test_db.js | tap-spec",
     "start": "nodemon src/index.js"
   },
   "repository": {
