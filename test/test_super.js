@@ -145,7 +145,7 @@ test('business route with get method returns a status code of 200 ', (t) => {
     });
 });
 
-test('business route with get method returns a status code of 200 ', (t) => {
+test('business  route with get method returns a status code of 200 ', (t) => {
   supertest(app)
     .get('/business?name=mazaj')
     .expect(200)
