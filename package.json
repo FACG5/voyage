@@ -1,6 +1,9 @@
 {
   "name": "voyage",
   "version": "1.0.0",
+  "engines": {
+    "node": "8.9.4"
+  },
   "description": "App to collect all entertainments places at Gaza",
   "main": "index.js",
   "directories": {
@@ -8,6 +11,7 @@
   },
   "scripts": {
     "dbtest": "NODE_ENV=test node test/test_db.js | tap-spec",
+    "test":"NODE_ENV=test node test/test_super.js | tap-spec",
     "start": "nodemon src/index.js"
   },
   "repository": {
