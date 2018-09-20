@@ -69,7 +69,8 @@ sendButton.addEventListener('click', (e) => {
         create('p', null, divResult, object.text, 'evaluation-content', null);
         const divRiviw = create('div', null, divResult, null, 'review-footer', null);
         const h3 = create('h3', null, divRiviw, null, 'user', null);
-        create('a', null, h3, `by : ${response.username}`, null, null);
+        const link = create('a', null, h3, `by : ${response.username}`, null, null);
+        link.href=`/user_profile/${response.username}`;        
         const evaluation = create('p', 'evaluation', divRiviw, object.evaluation, null, null);
         evaluation.style.display = 'none';
         const ul = create('ul', null, divRiviw, null, 'stars', null);
