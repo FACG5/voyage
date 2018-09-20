@@ -7,22 +7,25 @@
     border: none;
     border-radius: 5px;
 }
+.title{
+    color: #000 ;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 5%;
+    font-size: 20px;
+}
 .sign-up .sign-up-title{
     text-align: center;
     margin: 10px 0px 20px 0px;
     text-transform: capitalize;
     font-size: 30px;
+    font-weight: bold;
+}
+.sign-up-title span{
+    color: #52C2E6;
 }
 p{
     font-weight: bold;
-}
-select option
-{
-    background: #D2E9FF;
-    padding: 20px 20px 20px 20px;
-    font: 18px ;
-    min-height: 100px;
-    color: #666;
 }
 input, input:focus ,select{
     background-color: #E5E5E5;
@@ -139,35 +142,36 @@ transform: translateY(4px);
 
 @media only screen and (max-width: 600px) {
     .sign-up {
-        width: 90%;
+        width: 100%;
     }
 
     .sign-up .sign-up-title {
         margin: 10px 0px 20px 0px;
-        font-size: 18px;
-    }
-
-    button {
-        border: solid 2px #52C2E6;
-        color: #52C2E6;
+        font-size: 20px;
         font-weight: bold;
-        padding: 10px 10px;
-        display: block;
-        border-radius: 15px;
+    }
+    .switch{
+        padding: 5px 10px;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        grid-column-gap: 10%;
+        width: 90%;
+        margin: 0 auto 20px auto;
+    }
+    .switch .btn-switch{
+        min-width: 100%;
+        font-size:16px;
+        font-weight: bold;
+        padding: 8px 5px;
+        font-weight: bold;
+        text-transform: capitalize;
         cursor: pointer;
         outline: none;
-        width: 50%;
-        margin: 0 auto;
-        font-family: 'Inconsolata', monospace;
-        font-size: 18px;
+        background-color:#fff;
+        color: #52C2E6;
+        border: solid 1px #52C2E6;
+        border-radius: 5px;
     }
-
-    button:hover {
-        background: #52C2E6;
-        border-color: #52C2E6;
-        color: #ffffff;
-    }
-
     .message {
         position: relative;
         display: block;
@@ -182,7 +186,27 @@ transform: translateY(4px);
         color: red;
         min-height: 30px;
     }
-
+    .btn-send{
+        border: solid 2px #52C2E6;
+        color: #52C2E6;
+        font-weight: bold;
+        padding: 8px 8px;
+        display: block;
+        border-radius: 15px;
+        cursor: pointer;
+        outline: none;
+        width: 50%;
+        margin: 0 auto 20px auto;
+        font-family: 'Inconsolata', monospace;
+        font-size: 20px;
+    }
+    .title{
+        color: #000 ;
+        text-align: center;
+        text-transform: capitalize;
+        margin-bottom:5%;
+        font-size:18px;
+    }
 }
 
 /*
