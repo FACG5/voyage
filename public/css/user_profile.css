@@ -1,21 +1,95 @@
-.profile-section{
-    text-align: center;
-}
-img{
-    width:100px;
-}
-
-.checked {
-    color: yellow !important;
-}
-
-
 /*
 ------    S m a l l       S c r e e n   -------
 */
 
 @media only screen and (max-width: 600px) {
-
+    .profile{
+        padding: 0px 10px;
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .profile .profile-top{
+       display: grid;
+       grid-template-columns: 30% 60%;
+       grid-column-gap: 5%;
+       margin-bottom: 20px;
+    }
+    .profile .user-img{
+        max-width: 80px;
+        max-height: 70px;
+    }
+    .rounded{
+        border-radius: 50%;
+        max-width: 80px;
+        min-width: 80px;
+        max-height: 70px;
+        min-height: 70px;
+    }
+    .profile .user-data{
+        padding-top:10px;
+        font-size: 15px;
+    }
+    .profile .user-data h2{
+        text-transform: capitalize;
+        font-size: 18px;
+    }
+    .profile .switch{
+        padding: 0px 10px;
+        display: grid;
+        grid-template-columns: 45% 50%;
+        grid-column-gap: 10%;
+    }
+    .profile .switch .btn-switch{
+        min-width: 100%;
+        font-weight: bold;
+        padding: 8px 5px;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+        background-color:#fff;
+        color: #52C2E6;
+        border: solid 1px #52C2E6;
+        border-radius: 5px;
+    }
+    .profile .switch .btn-switch:hover{
+        color: #fff;
+        background:#52C2E6;
+    }
+    .profile .switch .tap{
+        font-weight: bold;
+        padding: 8px 5px;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background:#52C2E6;
+        border: solid 1px #52C2E6;
+        border-radius: 5px;
+    }
+    .profile .switch .tap:active,
+    .profile .switch .btn-switch:active {
+    transform: translateY(4px);
+    }
+    .info{
+        background: #fff;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 20px 30px;
+        font-size: 15px;
+    }
+    .info h3 , .info h4{
+        margin-bottom: 10px;
+        font-weight: normal;
+    }
+    .info span{
+        text-transform: capitalize;
+        display: inline-block;
+        color: #000;
+        font-weight: bold;
+    } 
 }
 
 /*
@@ -23,7 +97,94 @@ img{
 */
 
 @media (min-width: 601px) and (max-width: 900px) {
-
+    .profile{
+        width: 70%;
+        margin: 0 auto;
+        padding: 30px 10px;
+        }
+        .profile .profile-top{
+           display: grid;
+           grid-template-columns: 20% 50%;
+           grid-column-gap:20%;
+           margin-bottom: 20px;
+        }
+        .profile .user-img{
+            max-width: 80px;
+            max-height: 90px;
+        }
+        .rounded{
+            border-radius: 50%;
+            max-width: 80px;
+            min-width: 80px;
+            max-height: 70px;
+            min-height: 70px;
+        }
+        .profile .user-data{
+            padding-top:25px;
+            font-size: 18px;
+        }
+        .profile .user-data h2{
+            text-transform: capitalize;
+            font-size:20px;
+        }
+        .profile .switch{
+            padding: 0px 10px;
+            display: grid;
+            grid-template-columns: 40% 50%;
+            grid-column-gap: 10%;
+        }
+        .profile .switch .btn-switch{
+            min-width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 12px 10px;
+            font-weight: bold;
+            text-transform: capitalize;
+            cursor: pointer;
+            outline: none;
+            background-color:#fff;
+            color: #52C2E6;
+            border: solid 1px #52C2E6;
+            border-radius: 5px;
+        }
+        .profile .switch .btn-switch:hover{
+            color: #fff;
+            background:#52C2E6;
+        }
+        .profile .switch .tap{
+            font-weight: bold;
+            padding: 8px 5px;
+            font-weight: bold;
+            text-transform: capitalize;
+            cursor: pointer;
+            outline: none;
+            color: #fff;
+            background:#52C2E6;
+            border: solid 1px #52C2E6;
+            border-radius: 5px;
+        }
+        .profile .switch .tap:active,
+        .profile .switch .btn-switch:active {
+        transform: translateY(4px);
+        }
+        .info{
+            background: #fff;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 50px 30px;
+            font-size: 18px;
+        }
+        .info h3 , .info h4{
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+        .info span{
+            text-transform: capitalize;
+            display: inline-block;
+            color: #000;
+            font-weight: bold;
+        }
 }
 
 /*
@@ -31,5 +192,93 @@ img{
 */
 
 @media (min-width: 901px){
-    
+    .profile{
+    width: 70%;
+    margin: 0 auto;
+    padding: 30px 10px;
+    }
+    .profile .profile-top{
+       display: grid;
+       grid-template-columns: 20% 50%;
+       grid-column-gap:20%;
+       margin-bottom: 20px;
+       width: 50%;
+    }
+    .profile .user-img{
+        max-width: 80px;
+        max-height: 90px;
+    }
+    .rounded{
+        border-radius: 50%;
+        max-width: 80px;
+        min-width: 80px;
+        max-height: 70px;
+        min-height: 70px;
+    }
+    .profile .user-data{
+        padding-top:25px;
+        font-size: 18px;
+    }
+    .profile .user-data h2{
+        text-transform: capitalize;
+        font-size:20px;
+    }
+    .profile .switch{
+        padding: 0px 10px;
+        display: grid;
+        grid-template-columns: 40% 50%;
+        grid-column-gap: 10%;
+    }
+    .profile .switch .btn-switch{
+        min-width: 100%;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 12px 10px;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+        background-color:#fff;
+        color: #52C2E6;
+        border: solid 1px #52C2E6;
+        border-radius: 5px;
+    }
+    .profile .switch .btn-switch:hover{
+        color: #fff;
+        background:#52C2E6;
+    }
+    .profile .switch .tap{
+        font-weight: bold;
+        padding: 8px 5px;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background:#52C2E6;
+        border: solid 1px #52C2E6;
+        border-radius: 5px;
+    }
+    .profile .switch .tap:active,
+    .profile .switch .btn-switch:active {
+    transform: translateY(4px);
+    }
+    .info{
+        background: #fff;
+        width: 70%;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 50px 30px;
+        font-size: 18px;
+    }
+    .info h3 , .info h4{
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+    .info span{
+        text-transform: capitalize;
+        display: inline-block;
+        color: #000;
+        font-weight: bold;
+    }
 }
