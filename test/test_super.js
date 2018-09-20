@@ -116,7 +116,7 @@ test('user_profile route with get method returns a status code of 200 ', (t) => 
     .expect('Content-Type', /html/)
     .end((err, res) => {
       if (err) t.error(err);
-      t.equal(res.text.includes('<h2><a href="/user_profile/asmaa" id="asmaa" >@asmaa</a></h2>'), true, 'the page should contain user name  \'@asmaa\' ');
+      t.equal(JSON.parse(res.text.includes('<h2><a href="/user_profile/asmaa" id="asmaa" >@asmaa</a></h2>')), true, 'the page should contain user name  \'@asmaa\' ');
       t.end();
     });
 });
@@ -152,7 +152,7 @@ test('business  route with get method returns a status code of 200 ', (t) => {
     .expect('Content-Type', /html/)
     .end((err, res) => {
       if (err) t.error(err);
-      t.equal(res.text.includes('<textarea placeholder="Add your opinion .." id="text-review"></textarea>'), true, 'the header should contain review form');
+      t.equal(res.text.includes('<h1><span id="name-business">mazaj</span> restaurant</h1>'), true, 'the header should contain \'mazaj restaurant\'');
       t.end();
     });
 });
@@ -172,11 +172,11 @@ test('sign_in route with post method', (t) => {
   supertest(app)
     .post('/sign_in')
     .send({
-      username: 'asmaa@gmail.com',
-      password: '000',
+      email: 'farah@gmail.com',
+      password: '123',
     })
     .expect(200)
-    .expect('Content-Type', 'application/json')
+    .expect('Content-Type', 'application/json; charset=utf-8')
     .end((err, res) => {
       t.error(err);
       t.deepEqual(res.body, {
