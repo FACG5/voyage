@@ -74,3 +74,4 @@ const create = (element, value) => {
     elementNew.textContent = value;
     currentData.appendChild(elementNew);
 };
+

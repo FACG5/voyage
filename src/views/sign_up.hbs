@@ -1,80 +1,87 @@
-<div class="switch">
-    <button id="person-btn" class="but-person" >Person</button>
-    <button id="business-btn"class="but-business" >Business</button>
-</div>
-<p>message{{message}}</p>
+<div class="sign-up">
+    <h2 class="sign-up-title">Sign Up</h2>
 
-<div  id="person-div" class="div-person" >
+    <div class="switch">
+        <button id="person-btn" class="but-person" >Person</button>
+        <button id="business-btn" class="but-business" >Business</button>
+    </div>
 
-    <label for="email">
-        <input type="email" id="person-email" placeholder="Email" required>
-    </label>
-    <label for="username">
-        <input type="text" id="user-name" placeholder="Username" required>
-    </label>
-    <label for="pass">
-        <input type="password" id="person-pass" placeholder="Password" required>
-    </label>
-    <label for="confpass">
-        <input type="password" id="person-confpass" placeholder="Confirm password" required>
-    </label>
-    <label for="f-name">
-        <input type="text" id="f-name" placeholder="First name" required>
-    </label>
-    <label for="l-name">
-        <input type="text" id="l-name" placeholder="Last name" required>
-    </label>
-     <p id="person-err" class="errorValid"></p>
-    <br>
-    <label for="gender" >Gender :
-        <input type="radio" id="male" name="gender" value="male"> Male
-        <input type="radio" id="female" name="gender" value="female"> Female
-    </label>
-    <br>
+    <!--<p class="message" >message{{message}}</p>-->
 
-    <label for="birth"> Birth :
-        <input type="date" id="birth" required>
-    </label>
+    <div  id="person-div" class="div-person" >
+        <label for="email">
+            <input type="email" id="person-email" placeholder="Email" required>
+        </label>
+        <label for="username">
+            <input type="text" id="user-name" placeholder="Username" required>
+        </label>
+        <label for="pass">
+            <input type="password" id="person-pass" placeholder="Password" required>
+        </label>
+        <label for="confpass">
+            <input type="password" id="person-confpass" placeholder="Confirm password" required>
+        </label>
+        <label for="f-name">
+            <input type="text" id="f-name" placeholder="First name" required>
+        </label>
+        <label for="l-name">
+            <input type="text" id="l-name" placeholder="Last name" required>
+        </label>
+        <br>
+        <p class="title-label"> Gender </p>
+        <label for="gender" >
+            <input type="radio" id="male" name="gender" value="male"> Male
+            <input type="radio" id="female" name="gender" value="female"> Female
+        </label>
+        <br>
 
-    <button type="submit" id="person-send">Send</button>
-</div>
+        <p class="title-label"> Birth </p>
+        <label for="birth">
+            <input type="date" id="birth" required>
+        </label>
 
-<div id="business-div"class="div-business"  style="display: none">
-    <label for="email">
-        <input type="email" id="business-email" placeholder="Email" required>
-    </label>
+        <p id="person-err" class="errorValid"></p>
 
-    <label for="name">
-        <input type="text" id="business-name" placeholder="Business name" required>
-    </label>
+        <button type="submit" id="person-send">Send</button>
+    </div>
 
-    <label for="pass">
-        <input type="password" id="business-pass" placeholder="Password" required>
-    </label>
+    <div id="business-div" class="div-business"  style="display: none">
+        <label for="email">
+            <input type="email" id="business-email" placeholder="Email" required>
+        </label>
 
-    <label for="confpass">
-        <input type="password" id="business-confpass" placeholder="Confirm password" required>
-    </label>
+        <label for="name">
+            <input type="text" id="business-name" placeholder="Business name" required>
+        </label>
 
-    <label for="address">
-        <input type="text" id="address" placeholder="Address" required>
-    </label>
+        <label for="pass">
+            <input type="password" id="business-pass" placeholder="Password" required>
+        </label>
 
-    <label for="description">
-        <input type="text" id="description" placeholder="Description" required>
-    </label>
-    <label for="select menu" >
-      <select id="category">
-        <option value="restaurant">restaurant</option>
-        <option value="cafe">cafe</option>
-        <option value="park">park</option>
-      </select>
-    </label>
+        <label for="confpass">
+            <input type="password" id="business-confpass" placeholder="Confirm password" required>
+        </label>
 
-    <label for="image"> image :
-        <input type="url" id="image" required>
-    </label>
-    <p id="business-err" class="errorValid"></p>
+        <label for="address">
+            <input type="text" id="address" placeholder="Address" required>
+        </label>
 
-    <button type="submit" id="busines-send">Send</button>
+        <label for="description">
+            <input type="text" id="description" placeholder="Description" required>
+        </label>
+        <label for="select menu" >
+          <select id="category">
+            <option value="restaurant">restaurant</option>
+            <option value="cafe">cafe</option>
+            <option value="park">park</option>
+          </select>
+        </label>
+
+        <label for="image"> image :
+            <input type="url" id="image" required>
+        </label>
+        <p id="business-err" class="errorValid"></p>
+
+        <button type="submit" id="busines-send">Send</button>
+    </div>
 </div>
