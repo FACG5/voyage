@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "dbtest":"NODE_ENV=test tape test/test.js | tap-spec",
+    "dbtest": "NODE_ENV=test tape test/test.js | tap-spec",
     "test": "NODE_ENV=test tape test/test_super.js |  tap-spec",
     "start": "NODE_ENV=production node src/index.js",
     "dev": "NODE_ENV=test nodemon src/index.js"
@@ -32,7 +32,9 @@
     "eslint-plugin-import": "^2.14.0",
     "nodemon": "^1.18.4",
     "path": "^0.12.7",
-    "tape": "^4.9.1"
+    "tape": "^4.9.1",
+    "tap-spec": "^5.0.0",
+    "supertest": "^3.3.0"
   },
   "dependencies": {
     "bcrypt": "^3.0.0",
@@ -45,8 +47,6 @@
     "handlebars": "^4.0.12",
     "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.3.0",
-    "pg": "^7.4.3",
-    "supertest": "^3.3.0",
-    "tap-spec": "^5.0.0"
+    "pg": "^7.4.3"
   }
 }
