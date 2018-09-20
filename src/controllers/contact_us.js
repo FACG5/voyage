@@ -1,8 +1,13 @@
 exports.get = (req, res) => {
   let userName = '';
+  let isPerson = false;
   const { isUser } = req;
   if (isUser) {
     userName = req.data.name;
+    const { type } = req.data;
+    if (type === 'person') {
+      isPerson = true;
+    }
   }
 
   res.render('contact_us', {
@@ -12,5 +17,6 @@ exports.get = (req, res) => {
     title: 'Contact Us',
     userName,
     isUser,
+    isPerson,
   });
 };

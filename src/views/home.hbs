@@ -28,10 +28,11 @@
 </section>
 
 <div class="reviews-section">
+    <h2 class="review-title">latest users reviews</h2>
     <div class="review">
         {{#each response}}
             <div class="result">
-                <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" >{{username}}</a></h3>
+                <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" > by: {{username}}</a></h3>
                 <p class="evaluation-content">{{content}}</p>
                 <div class="review-footer">
                     <h3 class="business"><a href="/business?name={{name}}" >@ {{name}}</a></h3>

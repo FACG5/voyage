@@ -1,73 +1,92 @@
-<div id=business" class="business">
-
     {{#if errorMessage}}
         <span class="error-message">{{errorMessage}}</span>
     {{else}}
 
-    <div class="header-page">
-        <div class="title">
-            <h1><span id="name-business">{{name}}</span> {{category}}</h1>
-            <h3>@{{name}}</h3>
-        </div>
-        <div class="avg-evaluation">
-            <h3>Avg Evaluation : {{avarage}}/5 </h3>
-        </div>
-        <div class="img">
-            <img src="{{img}}">
-        </div>
-    </div>/div>
-                    <div id="8">
-
-
-    {{#if isPerson}}
-        <div class="add-review">
-            <div class="head-review">
-                <p>{{userName}}</p>
-            </div>
-            <div class="body-review">
-                <textarea placeholder="Add your opinion .." id="text-review"></textarea>
-            <div class="foot-review">
-                <ul class="stars">
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                    <li class="fa fa-star"></li>
-                </ul>
-                <div class="send">
-                    <button type="submit" id="send-button">Send</button>
+    <div class="profile">
+            <div class="header-page">
+                <div class="profile-top">
+                     <img class="img-icon" src={{img}}>
+                    <div class="title user-data">
+                        <h2><span id="name-business">{{name}}</span> {{category}}</h2>
+                        <p>@{{name}}</p>
+                    </div>
                 </div>
+
+                <div class="avg-evaluation">
+                    <img class="img-cover" src="{{img}}">
+                    <div class="rgba">
+                        <h1 id="avarage">{{avarage}}</h1>
+                        <ul class="stars">
+                            <li id="one-star" class="fa fa-star"></li>
+                            <li id="two-star" class="fa fa-star"></li>
+                            <li id="three-star" class="fa fa-star"></li>
+                            <li id="four-star" class="fa fa-star"></li>
+                            <li id="five-star" class="fa fa-star"></li>
+                        </ul>
+                    </div>
+              </div>
             </div>
+
+            <div class="switch">
+                <button type="submit" class="btn-switch tap" id="reviews-button">reviews</button>
+                <button type="submit" class="btn-switch" id="about-button">about</button>
+            </div>
+
+              {{#if isPerson}}
+                    <section class="add-review">
+                        <div class="head-review">
+                            <h3>Add your own oponion</h3>
+                            <p>{{userName}}</p>
+                        </div>
+                        <div class="body-review">
+                            <textarea placeholder="Add your opinion .." id="text-review"></textarea>
+                        <div class="foot-review">
+                            <p>rate this place and choose from 5 stars </p>
+                            <ul class="stars" id="stars">
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                                <li class="fa fa-star"></li>
+                            </ul>
+                                <button type="submit" class = "btn-send" id="send-button">Evaluate</button>
+                        </div>
+                        </div>
+                    </section>
+                {{/if}}
+
+        <div id="reviews" class="reviews-section" >
+            <h2 class="review-title">users reviews</h2>
+            <div id="current-data"></div>
+            <div class="review">
+                {{#each responseReview}}
+                    <div class="result">
+                        <p class="evaluation-content">{{content}}</p>
+                        <div class="review-footer">
+                            <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" > by: {{username}}</a></h3>
+                            <p id="evaluation">{{evaluation}}</p>
+                            <ul class="stars">
+                                <li id="one-star" class="fa fa-star"></li>
+                                <li id="two-star" class="fa fa-star"></li>
+                                <li id="three-star" class="fa fa-star"></li>
+                                <li id="four-star" class="fa fa-star"></li>
+                                <li id="five-star" class="fa fa-star"></li>
+                            </ul>
+                        </div>
+                    </div>
+                {{/each}}
             </div>
         </div>
+
+        <div id="about-div" class="info about-div">
+            <h3>Bio:</h3>
+            <p id="description">{{description}}</p>
+            <h3>Location:</h3>
+            <p id="address">{{address}}</p>
+            <h3>Type:</h3>
+            <p id="category">#{{category}}</p>
+        </div>
+
+
     {{/if}}
-
-    <div id="info">
-        <div class="switch">
-            <button type="submit" id="reviews-button">reviews</button>
-            <button type="submit" id="about-button">about</button>
-        </div>
-        <div class="div-switch">
-            <div id="reviews-div" class="reviews-div">
-                <div id="current-data"></div>
-            {{#each responseReview}}
-                <div id="{{id}}">
-                    <a href="/user_profile/{{username}}" id="{{username}}" >@{{username}}</a>
-                    <p id="content" >{{content}}</p>
-                    <p id="evaluation" >{{evaluation}}/5</p>
-                    <hr>
-                </div>
-            {{/each}}
-        </div>
-            <div id="about-div" class="about-div">
-                <h2>Bio:</h2>
-                <p id="description">{{description}}</p>
-                <h2>Location:</h2>
-                <p id="address">{{address}}</p>
-                <h2>Type:</h2>
-                <p id="category">#{{category}}</p>
-            </div>
-        </div>
     </div>
-    {{/if}}
-</div>
