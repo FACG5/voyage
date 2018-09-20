@@ -9,12 +9,22 @@
 }
 .sign-up .sign-up-title{
     text-align: center;
-    margin: 10px 0px 50px 0px;
+    margin: 10px 0px 20px 0px;
     text-transform: capitalize;
     font-size: 30px;
 }
-
-input, input:focus{
+p{
+    font-weight: bold;
+}
+select option
+{
+    background: #D2E9FF;
+    padding: 20px 20px 20px 20px;
+    font: 18px ;
+    min-height: 100px;
+    color: #666;
+}
+input, input:focus ,select{
     background-color: #E5E5E5;
     border-radius: 15px;
     outline: none;
@@ -56,8 +66,55 @@ input[type="radio"]{
     max-height: 10px;
 }
 
+.errorValid {
+    text-align: center;
+    color: red;
+    min-height: 30px;
+}
+.switch{
+    padding: 20px 10px;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-column-gap: 10%;
+    width: 70%;
+    margin: 0 auto;
+}
+.switch .btn-switch{
+    min-width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    outline: none;
+    background-color:#fff;
+    color: #52C2E6;
+    border: solid 1px #52C2E6;
+    border-radius: 5px;
+}
+ .switch .btn-switch:hover{
+    color: #fff;
+    background:#52C2E6;
+}
+.switch .tap{
+    font-weight: bold;
+    padding: 8px 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background:#52C2E6;
+    border: solid 1px #52C2E6;
+    border-radius: 5px;
+}
+ .tap:active,
+.btn-switch:active {
+transform: translateY(4px);
+}
 
-button {
+.btn-send{
     border: solid 2px #52C2E6;
     color: #52C2E6;
     font-weight: bold;
@@ -71,19 +128,11 @@ button {
     font-family: 'Inconsolata', monospace;
     font-size: 20px;
 }
-
-button:hover {
+.btn-send:hover{
     background: #52C2E6;
     border-color: #52C2E6;
     color: #ffffff;
 }
-
-.errorValid {
-    text-align: center;
-    color: red;
-    min-height: 30px;
-}
-
 /*
 ------    S m a l l       S c r e e n   -------
 */

@@ -108,4 +108,3 @@ const create = (element, id, elementPerent, value, classname, classnameSec) => {
   elementPerent.appendChild(elementNew);
   return elementNew;
 };
-

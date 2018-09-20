@@ -28,14 +28,19 @@ const personErr = document.getElementById('person-err');
 const businessErr = document.getElementById('business-err');
 let gender = '';
 
+personBtn.classList.add('tap');
 
 personBtn.addEventListener('click', () => {
   personDiv.style.display = 'block';
   businessDiv.style.display = 'none';
+  personBtn.classList.add('tap');
+  businessBtn.classList.remove('tap');
 });
 businessBtn.addEventListener('click', () => {
   businessDiv.style.display = 'block';
   personDiv.style.display = 'none';
+  businessBtn.classList.add('tap');
+  personBtn.classList.remove('tap');
 });
 // //////////////////////////////////////for person////////////////////////////////////
 personEmail.addEventListener('focusout', () => {
