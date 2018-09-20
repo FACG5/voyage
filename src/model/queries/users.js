@@ -25,8 +25,7 @@ const getUserData = username => new Promise((resolve, reject) => {
     return resolve(res.rows);
   });
 });
-
-const getReviewByUser = username => new Promise((resolve, reject) => {
+ const getReviewByUser = username => new Promise((resolve, reject) => {
   const sql = {
     text: 'SELECT person.user_id, person.username, review.content, review.evaluation, business.user_id, business.name FROM person JOIN review ON person.id = review.person_id JOIN business ON  business.id= review.business_id WHERE person.username=$1',
     values: [username],

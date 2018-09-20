@@ -8,7 +8,7 @@ exports.get = (req, res) => {
     res.redirect('/');
   } else {
     res.render('sign_up', {
-      style: 'style', dom: 'sign_up', title: 'sign up', vald: 'validation'
+      style: 'style', dom: 'sign_up', title: 'sign up', style_special: 'sign_up', vald: 'validation',
     });
   }
 };
