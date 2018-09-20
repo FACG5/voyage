@@ -3,10 +3,16 @@ const { getAvg } = require('../model/queries/review');
 
 exports.get = (req, res, next) => {
   let userName = '';
+  let isPerson = false;
   const { isUser } = req;
   if (isUser) {
     userName = req.data.name;
+    const { type } = req.data;
+    if (type === 'person') {
+      isPerson = true;
+    }
   }
+
   const { category } = req.params;
 
   getAvg(category)
@@ -19,6 +25,7 @@ exports.get = (req, res, next) => {
         dom: 'categories',
         isUser,
         userName,
+        isPerson,
       });
     })
     .catch(err => next(err));
