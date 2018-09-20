@@ -1,4 +1,4 @@
-/*
+/* 
 ------    S m a l l       S c r e e n   -------   
 */
 
@@ -23,7 +23,7 @@
     margin: 0px auto 20px auto;
     min-height: 150px;
     max-height:150px;
-    position: relative;
+    /* position: relative; */
     border-radius: 10px;
   }
   .cat-result-pic img{
