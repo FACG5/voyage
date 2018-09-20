@@ -11,10 +11,13 @@ const create = (type, elementParent, className, value) => {
 
 commentButton.forEach((element) => {
   element.addEventListener('click', (e) => {
+
     const { id } = e.target;
     const object = {
       idReview: id,
     };
+
+
 
     fetch('/comment', {
       method: 'POST',
@@ -24,6 +27,7 @@ commentButton.forEach((element) => {
     })
       .then(response => response.json())
       .then((response) => {
+
         const { arrComment, isPerson, userName } = response;
         const index = Section.length - id;
         const commentSection = Section[index];
@@ -54,9 +58,15 @@ commentButton.forEach((element) => {
                 .then(res => res.json())
                 .then((res) => {
                   if (res.result === 'pass') {
+                    input.value = '';
+                    const secandElement = commentSection.children[1];
+                    if (commentSection.children[1].textContent === 'no comment') {
+                      commentSection.children[1].style.display = 'none';
+                    }
                     const divComment = create('div', commentSection, 'comment', null);
+                    commentSection.insertBefore(divComment, secandElement);
                     create('h4', divComment, 'comment-username', userName);
-                    create('p', divComment, 'comment-content', input.value);
+                    create('p', divComment, 'comment-content', data.content);
                   }
                 })
                 .catch(err => alert(err));
