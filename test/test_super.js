@@ -1,6 +1,19 @@
 const test = require('tape');
 const supertest = require('supertest');
 const app = require('../src/app');
+const runDbBuild = require('../src/model/database/db_build');
+
+
+test('setup', (t) => {
+  runDbBuild('db_build.sql', (err) => {
+    if(err) t.error(err);
+    runDbBuild('fake_data.sql', (error) => {
+      if(error) t.error(error);
+      t.end();
+    })
+  });
+});
+
 
 // Home Route
 test('Home route with get method returns a status code of 200 ', (t) => {
@@ -48,7 +61,7 @@ test('about_us route with get method returns a status code of 200 ', (t) => {
     .end((err, res) => {
       if (err) t.error(err);
       t.equal(res.text.includes('<div class="about-idea">'), true, 'the page should have about-idea class');
-      t.equal(res.text.includes('<div class="about-team">'), true, 'the page should have about-team class');
+      t.equal(res.text.includes('<div class="about-team">'), false, 'the page should have about-team class');
       t.end();
     });
 });
@@ -111,12 +124,12 @@ test('sign_in route with get method returns a status code of 200 ', (t) => {
 
 test('user_profile route with get method returns a status code of 200 ', (t) => {
   supertest(app)
-    .get('/user_profile/asmaa')
+    .get('/user_profile/ahmad91')
     .expect(200)
     .expect('Content-Type', /html/)
     .end((err, res) => {
       if (err) t.error(err);
-      t.equal(JSON.parse(res.text.includes('<h2><a href="/user_profile/asmaa" id="asmaa" >@asmaa</a></h2>')), true, 'the page should contain user name  \'@asmaa\' ');
+      t.equal(res.text.includes('<a href="/user_profile/ahmad91" id="ahmad91" >@ahmad91</a>'), true, 'the page should contain user name  \'@ahmad91\' ');
       t.end();
     });
 });
@@ -147,12 +160,12 @@ test('business route with get method returns a status code of 200 ', (t) => {
 
 test('business  route with get method returns a status code of 200 ', (t) => {
   supertest(app)
-    .get('/business?name=mazaj')
+    .get('/business?name=roots')
     .expect(200)
     .expect('Content-Type', /html/)
     .end((err, res) => {
       if (err) t.error(err);
-      t.equal(res.text.includes('<h1><span id="name-business">mazaj</span> restaurant</h1>'), true, 'the header should contain \'mazaj restaurant\'');
+      t.equal(res.text.includes('<span id="name-business">roots</span>'), true, 'the header should contain \'roots restaurant\'');
       t.end();
     });
 });
@@ -172,7 +185,7 @@ test('sign_in route with post method', (t) => {
   supertest(app)
     .post('/sign_in')
     .send({
-      email: 'farah@gmail.com',
+      email: 'a@a.a',
       password: '123',
     })
     .expect(200)

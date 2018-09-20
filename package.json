@@ -11,8 +11,8 @@
   },
   "scripts": {
     "dbtest":"NODE_ENV=test tape test/test.js | tap-spec",
-    "test": "NODE_ENV=test tape test/test_super.js | tap-spec",
-    "start": "nodemon src/index.js",
+    "test": "NODE_ENV=test tape test/test_super.js |  tap-spec",
+    "start": "NODE_ENV=production node src/index.js",
     "dev": "NODE_ENV=test nodemon src/index.js"
   },
   "repository": {
