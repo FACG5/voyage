@@ -1,4 +1,5 @@
 
+const { getCategory } = require('../model/queries/review');
 const { getAvg } = require('../model/queries/review');
 
 exports.get = (req, res, next) => {
@@ -15,18 +16,23 @@ exports.get = (req, res, next) => {
 
   const { category } = req.params;
 
-  getAvg(category)
+  getCategory(category)
     .then((response) => {
-      res.render('category', {
-        style: 'style',
-        style_special: 'category',
-        title: category,
-        response,
-        dom: 'categories',
-        isUser,
-        userName,
-        isPerson,
-      });
+      getAvg(category)
+        .then((result) => {
+          res.render('category', {
+            style: 'style',
+            style_special: 'category',
+            title: category,
+            response,
+            dom: 'categories',
+            isUser,
+            userName,
+            result,
+            isPerson,
+          });
+        })
+        .catch(error => next(error));
     })
     .catch(err => next(err));
 };

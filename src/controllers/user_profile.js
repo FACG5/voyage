@@ -18,7 +18,7 @@ exports.get = (req, res, next) => {
       if (response.length !== 0) {
         let img;
         const { gender } = response[0];
-        if (gender === 'femail') {
+        if (gender === 'female') {
           img = 'https://image.flaticon.com/icons/svg/145/145852.svg';
         } else {
           img = 'https://image.flaticon.com/icons/svg/145/145867.svg';
