@@ -62,7 +62,19 @@ const getAvg = category => new Promise((resolve, reject) => {
   });
 });
 
+const getCategory = category => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'SELECT * FROM business WHERE category=$1',
+    values: [category],
+  };
+  dbConnection.query(sql, (error, res) => {
+    if (error) return reject(new Error(`Error in DB ${error}`));
+    return resolve(res.rows);
+  });
+});
+
 module.exports = {
+  getCategory,
   getReviews,
   getComments,
   getReviewsByBusiness,
