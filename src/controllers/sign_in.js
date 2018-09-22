@@ -21,7 +21,6 @@ exports.get = (req, res) => {
  */
 exports.post = (req, res, next) => {
   const { email, password } = req.body;
-
   checkUser(email)
     .then((request) => {
       if (request.length > 0) {
@@ -48,7 +47,7 @@ exports.post = (req, res, next) => {
           })
           .catch(err => res.send({ err: `Error in password hash and ${err}` }));
       } else {
-        res.send({ err: 'invalid username or password' });
+        res.send({ err: 'length is < 0' });
       }
     })
     .catch(err => next(err));

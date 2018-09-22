@@ -7,7 +7,6 @@ document.querySelectorAll('.result').forEach((element) => {
   const threeStar = element.querySelector('#three-star');
   const fourStar = element.querySelector('#four-star');
   const fiveStar = element.querySelector('#five-star');
-
   if (evaluation.textContent >= 1) {
     oneStar.classList.add('checked');
     if (evaluation.textContent >= 2) {
