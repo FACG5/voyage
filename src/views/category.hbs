@@ -1,19 +1,24 @@
 <section class="category-section">
   <h2><span>top</span> Options for your choice</h2>
   <div class="cat-result">
-    {{#each response}}
-      <div class="cat-result-pic" >
-        <img class="cat-photo" id="{{name}}" src="{{img}}">
-        <div  class="cat-data">
-          <h2 id="{{name}}" class="cat-name">{{name}}</h2>
-          <h3>Avg Evaluation : {{avg}}/5 </h3>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-        </div>
-      </div>
-    {{/each}}
+    {{#if messageError }}
+        <h4>{{messageError}}</h4>
+    {{/if}}
+        {{#each result}}
+          <div class="cat-result-pic" >
+            <img class="cat-photo" id="{{name}}" src="{{img}}">
+            <div  class="cat-data">
+              <h2 id="{{name}}" class="cat-name">{{name}}</h2>
+              <h3 id="avg">{{avg}}</h3>
+                <ul class="stars">
+                    <li id="one-star" class=" fa fa-star"></li>
+                    <li id="two-star" class=" fa fa-star"></li>
+                    <li id="three-star" class=" fa fa-star"></li>
+                    <li id="four-star" class="fa fa-star"></li>
+                    <li id="five-star" class="fa fa-star"></li>
+                </ul>
+            </div>
+          </div>
+        {{/each}}
   </div>
 </section>
