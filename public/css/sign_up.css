@@ -8,7 +8,7 @@
     border-radius: 5px;
 }
 .title{
-    color: #000 ;
+    color: rgba(110, 120, 136, 0.9);
     text-align: center;
     text-transform: capitalize;
     margin-bottom: 5%;
@@ -172,6 +172,31 @@ transform: translateY(4px);
         border: solid 1px #52C2E6;
         border-radius: 5px;
     }
+    .switch .tap{
+        font-weight: bold;
+        padding: 8px 5px;
+        font-weight: bold;
+        text-transform: capitalize;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        background:#52C2E6;
+        border: solid 1px #52C2E6;
+        border-radius: 5px;
+    }
+     .tap:active,
+    .btn-switch:active {
+    transform: translateY(4px);
+    }
+    .switch .btn-switch:hover{
+        color: #fff;
+        background:#52C2E6;
+    }
+    .btn-send:hover{
+        background: #52C2E6;
+        border-color: #52C2E6;
+        color: #ffffff;
+    }
     .message {
         position: relative;
         display: block;
@@ -201,26 +226,10 @@ transform: translateY(4px);
         font-size: 20px;
     }
     .title{
-        color: #000 ;
+        color: rgba(110, 120, 136, 0.9);
         text-align: center;
         text-transform: capitalize;
         margin-bottom:5%;
-        font-size:18px;
+        font-size:16px;
     }
-}
-
-/*
- ------    M e d i u m       S c r e e n   -------
-*/
-
-@media (min-width: 601px) and (max-width: 900px) {
-
-}
-
-/*
-------    L a r g e       S c r e e n   -------
-*/
-
-@media (min-width: 901px){
-
 }

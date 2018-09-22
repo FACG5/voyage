@@ -3,21 +3,21 @@
   <div class="categoriesBtns">
     <button id="cafe" class="categories" type="button" >
         <img id="coffeeCup" src="./images/coffee-cup.svg" >
-        <div class="rgba"><p>coffee shops</p></div>
+        <p>coffee shops</p>
     </button>
     <button id="park" class="categories" type="button">
         <img  id="parks" src="./images/park.svg" >
-        <div class="rgba"><p>parks</p></div>
+        <p>parks</p>
     </button>
     <button id="restaurant" class="categories"  type="button" >
         <img  id="tray" src="./images/tray.svg" >
-        <div class="rgba"><p>restaurants</p></div>
+        <p>restaurants</p>
     </button>
   </div>
 </section>
 
 <section class="search-section">
-    <h2> <span class="fas fa-search "></span> Search about place</h2>
+    <h2> <span class="fas fa-search "></span> Search for place</h2>
     <form class="search-form" action="" method="get">
         <label for="search-input" >
             <input list="data" class="search-input" type="text" name="saerch" id="search" placeholder="Type here to search.." autocomplete="on">
@@ -45,6 +45,8 @@
                         <li id="five-star" class="fa fa-star"></li>
                     </ul>
                 </div>
+                <button type="submit" id="{{id}}" class="button-comment">comment</button>
+                <section class="comment-section"></section>
             </div>
         {{/each}}
     </div>
