@@ -13,6 +13,10 @@
         {{>footer}}
     </body>
 
+    {{#if comment}}
+        <script src="/js/{{comment}}.js"></script>
+    {{/if}}
+
     {{#if vald}}
     <script src="/js/{{vald}}.js"></script>
     {{/if}}

@@ -19,6 +19,7 @@ exports.get = (req, res, next) => {
         style_special: 'home',
         title: 'Home',
         dom: 'home',
+        comment: 'comment',
         isUser,
         userName,
         isPerson,

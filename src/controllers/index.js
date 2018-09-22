@@ -11,6 +11,7 @@ const business = require('./business_page');
 const error = require('./error');
 const contact = require('./contact_us');
 const about = require('./about_us');
+const comment = require('./comment');
 
 const userProfile = require('./user_profile');
 const checkauth = require('../middlewares/checkauth');
@@ -40,6 +41,9 @@ router.get('/business', business.get);
 router.post('/business', business.post);
 
 router.get('/sign_out', signOut.signout);
+
+router.post('/comment', comment.get);
+router.post('/commentAdd', comment.post);
 
 
 router.use(error.client);
