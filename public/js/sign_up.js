@@ -149,5 +149,5 @@ businessSendBtn.addEventListener('click', () => {
         alert(message);
       }
     })
-    .catch(error => alert('ERROR :',error));
+    .catch(error => alert('ERROR :', error));
 });

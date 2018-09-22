@@ -1,5 +1,5 @@
-/* global document */
-/* global window */
+/* global document window fetch */
+
 const getElement = id => document.getElementById(id);
 
 const email = getElement('input-email');
