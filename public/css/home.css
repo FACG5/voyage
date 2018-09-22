@@ -30,16 +30,17 @@
          
     }
     .categories p{
-        visibility:hidden;
+        visibility:visible;
         font-size:12px;
         transition: all 0.5s ease;
         font-weight: normal;
         text-transform: capitalize;
-    }
+        color:#4f4f4f;
+        }
     .categories:hover p{
-        visibility:visible;
-    }
-    .search-section{
+        color: #000;
+        }
+        .search-section{
         min-height: 100px;
         max-height: 100px;
         margin-top: 0%;
@@ -112,13 +113,14 @@
          
     }
       .categories p{
-    visibility:hidden;
+    visibility:visible;
     transition: all 0.5s ease;
     font-weight: bold;
     text-transform: capitalize;
+    color:#4f4f4f;
     }
   .categories:hover p{
-      visibility:visible;
+    color: #000;
     }
     .search-section{
         min-height: 120px;
@@ -191,14 +193,15 @@
             
        }
        .categories p{
-        visibility:hidden;
+        visibility:visible;
         transition: all 0.5s ease;
         font-weight: bold;
         text-transform: capitalize;
         font-size: 17px;
+        color:#4f4f4f;
         }
-      .categories:hover p{
-          visibility:visible;
+    .categories:hover p{
+        color: #000;
         }
       .search-section{
           min-height: 150px;

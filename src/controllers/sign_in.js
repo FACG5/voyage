@@ -1,6 +1,6 @@
 const { sign } = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const { checkUser,getName } = require('../model/queries/users');
+const { checkUser, getName } = require('../model/queries/users');
 
 exports.get = (req, res) => {
   if (req.isUser) {

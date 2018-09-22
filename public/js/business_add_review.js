@@ -1,4 +1,4 @@
-/* global document fetch */
+/* global  document fetch */
 
 const sendButton = getElement('send-button');
 const textReview = getElement('text-review');
