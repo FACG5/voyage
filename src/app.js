@@ -28,4 +28,6 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use(cookieParser());
 app.use(router);
 
+app.disable('x-powered-by');
+
 module.exports = app;
