@@ -29,5 +29,18 @@ const addPerson = (userId, data) => new Promise((resolve, reject) => {
   });
 });
 
+const personAlreadyReview = personId => new Promise((resolve, reject) => {
+  const sql = {
+    text: 'SELECT * FROM review WHERE person_id = $1',
+    values: [personId],
+  };
+  dbConnection.query(sql, (err, res) => {
+    if (err) {
+      return reject(err);
+    }
+    return resolve(res.rows);
+  });
+});
 
-module.exports = { addPerson, getPerson };
+
+module.exports = { addPerson, getPerson , personAlreadyReview};
