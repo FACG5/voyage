@@ -1,6 +1,6 @@
 /* global document window */
 const catResult = document.querySelector('.cat-result');
-const catName = document.querySelector('.cat-name');
+const catName = document.querySelector('#cat-name');
 
 document.querySelectorAll('.cat-data').forEach((element) => {
   const evaluation = element.querySelector('#avg');
@@ -28,11 +28,11 @@ document.querySelectorAll('.cat-data').forEach((element) => {
 });
 
 catResult.addEventListener('click', (e) => {
-  const name = e.target.id;
+  const name = e.target.className;
   window.location = `/business?name=${name}`;
 });
 
 catName.addEventListener('click', (e) => {
-  const name = e.target.id;
+  const name = e.target.className;
   window.location = `/business?name=${name}`;
 });

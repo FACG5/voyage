@@ -6,7 +6,7 @@ const dbConnection = require('./db_connection');
 const dbBuild = (fileName, cb) => {
   const sql = fs.readFileSync(path.join(__dirname, fileName)).toString();
   dbConnection.query(sql, (err, res) => {
-    if (err) cb(err);
+    if (err) return cb(err);
     cb(null, res);
   });
 };
