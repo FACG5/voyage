@@ -4,7 +4,7 @@ const runDbBuild = require('../src/model/database/db_build');
 const { addPerson, getPerson } = require('../src/model/queries/person');
 const { addUser, checkUser, getName } = require('../src/model/queries/users');
 const { addBusiness, getSearch, getSearchResult } = require('../src/model/queries/business');
-const { getReviews, getComments, getReviewsByBusiness, getAvg ,setReview } = require('../src/model/queries/review');
+const { getReviews, getComments, getReviewsByBusiness, getAvg, setReview } = require('../src/model/queries/review');
 
 
 tape('Test for the addUser function', (t) => {
@@ -57,7 +57,7 @@ tape('Test for the setReview function', (t) => {
     return runDbBuild('fake_data.sql', () => {
       setReview(1, 1, 'good restrusnt', 5)
         .then((response) => {
-          t.equal( typeof response, 'object', 'setReview returns data successfully ');
+          t.equal(typeof response, 'object', 'setReview returns data successfully ');
           t.end();
         })
         .catch(error => t.error(error));
@@ -87,7 +87,7 @@ tape('Test for the getSearchResult function', (t) => {
       getSearchResult('roots')
         .then((response) => {
           t.equal(response.length > 0, true, 'The search returns data successfully ');
-          t.equal(response[0].category, 'restruant' , 'The search returns data properly ');
+          t.equal(response[0].category, 'restruant', 'The search returns data properly ');
           t.end();
         })
         .catch(error => t.error(error));
@@ -193,7 +193,7 @@ tape('Test for the getPerson function', (t) => {
       getPerson('ahmad91')
         .then((response) => {
           t.equal(response.length > 0, true, 'getPerson returns data successfully ');
-          t.equal(response[0].first_name,'ahmad' , 'getPerson returns data properly ');
+          t.equal(response[0].first_name, 'ahmad', 'getPerson returns data properly ');
           t.end();
         })
         .catch(error => t.error(error));
@@ -202,5 +202,5 @@ tape('Test for the getPerson function', (t) => {
 });
 
 tape.onFinish(() => {
-    process.exit(0);
-  });
+  process.exit(0);
+});
