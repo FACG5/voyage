@@ -16,7 +16,7 @@
             <input type="text" id="user-name" placeholder="Username" required>
         </label>
         <label for="pass">
-            <input type="password" id="person-pass" placeholder="Password" required>
+            <input type="password" id="person-pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         </label>
         <label for="confpass">
             <input type="password" id="person-confpass" placeholder="Confirm password" required>
@@ -55,7 +55,7 @@
         </label>
 
         <label for="pass">
-            <input type="password" id="business-pass" placeholder="Password" required>
+            <input type="password" id="business-pass" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
         </label>
 
         <label for="confpass">

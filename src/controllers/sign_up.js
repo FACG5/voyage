@@ -1,4 +1,5 @@
 const hashPassword = require('./hashPassword');
+const validateEmail = require('./validateEmail');
 const { addUser } = require('../model/queries/users');
 const { addPerson } = require('../model/queries/person');
 const { addBusiness } = require('../model/queries/business');
@@ -20,7 +21,7 @@ exports.post = (request, response) => {
     hashPassword(password, (err, hash) => {
       if (err) {
         response.send({ message: 'ERROR' });
-      } else {
+      } else if (validateEmail(email)) {
         addUser(data, hash)
           .then((result) => {
             const userId = result.rows[0].id;
@@ -43,6 +44,8 @@ exports.post = (request, response) => {
           .catch(() => {
             response.send({ message: ' email already exists', pass: false });
           });
+      } else {
+        response.send({ message: ' not valid email', pass: false });
       }
     });
   }
