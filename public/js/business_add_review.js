@@ -62,7 +62,7 @@ sendButton.addEventListener('click', (e) => {
       .then((response) => {
         textReview.value = '';
         zeroStar();
-        if (response.err) {
+        if (response.err === 'The person already add the review') {
           alert(response.err);
         } else {
           const firstElement = currentData.firstElementChild;

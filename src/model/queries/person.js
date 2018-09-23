@@ -29,10 +29,10 @@ const addPerson = (userId, data) => new Promise((resolve, reject) => {
   });
 });
 
-const personAlreadyReview = personId => new Promise((resolve, reject) => {
+const personAlreadyReview = (businessId, personId) => new Promise((resolve, reject) => {
   const sql = {
-    text: 'SELECT * FROM review WHERE person_id = $1',
-    values: [personId],
+    text: 'SELECT * FROM review WHERE business_id=$1 and  person_id = $2',
+    values: [businessId, personId],
   };
   dbConnection.query(sql, (err, res) => {
     if (err) {
@@ -43,4 +43,4 @@ const personAlreadyReview = personId => new Promise((resolve, reject) => {
 });
 
 
-module.exports = { addPerson, getPerson , personAlreadyReview};
+module.exports = { addPerson, getPerson, personAlreadyReview };

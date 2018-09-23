@@ -88,9 +88,9 @@ exports.post = (req, res, next) => {
       getPerson(name)
         .then((responsePerson) => {
           const idPerson = responsePerson[0].id;
-          personAlreadyReview(idPerson)
+          personAlreadyReview(idBusiness, idPerson)
             .then((resReview) => {
-              if (resReview.length > 0) {
+              if (resReview.length !== 0) {
                 res.send({ err: 'The person already add the review' });
               } else {
                 setReview(idPerson, idBusiness, text, parseInt(evaluation, 10))
