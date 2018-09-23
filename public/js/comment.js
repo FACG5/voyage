@@ -11,12 +11,10 @@ const create = (type, elementParent, className, value) => {
 
 commentButton.forEach((element) => {
   element.addEventListener('click', (e) => {
-
     const { id } = e.target;
     const object = {
       idReview: id,
     };
-
 
 
     fetch('/comment', {
@@ -27,7 +25,6 @@ commentButton.forEach((element) => {
     })
       .then(response => response.json())
       .then((response) => {
-
         const { arrComment, isPerson, userName } = response;
         const index = Section.length - id;
         const commentSection = Section[index];
@@ -35,11 +32,12 @@ commentButton.forEach((element) => {
 
         if (isPerson) {
           const formAdd = create('div', commentSection, 'form-add', null);
-          create('h4', formAdd, 'form-add', userName);
+          create('h4', formAdd, 'form-add', `${userName} type your comment`);
           const input = document.createElement('input');
+          input.placeholder='write new comment.. ';
           input.setAttribute('type', 'text');
           formAdd.appendChild(input);
-          const sendComment = create('button', formAdd, 'form-add', 'send');
+          const sendComment = create('button', formAdd, 'form-add', 'add comment');
           sendComment.addEventListener('click', () => {
             if (input.value === '') {
               alert('file the comment');
@@ -79,13 +77,14 @@ commentButton.forEach((element) => {
         } else {
           arrComment.forEach((item) => {
             const divComment = create('div', commentSection, 'comment', null);
-            create('h4', divComment, 'comment-username', item.username);
+            const link = create('a', divComment, 'comment-username', '@user ' + item.username +'..');
+            link.href = `/user_profile/${item.username}`; 
             create('p', divComment, 'comment-content', item.content);
           });
         }
         commentSection.style.display = 'block';
         element.style.display = 'none';
-        const closeComment = create('button', commentSection, 'close', 'close');
+        const closeComment = create('button', commentSection, 'close', 'close comments');
         closeComment.addEventListener('click', () => {
           element.style.display = 'block';
           commentSection.style.display = 'none';
