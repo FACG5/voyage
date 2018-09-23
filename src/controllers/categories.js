@@ -18,21 +18,33 @@ exports.get = (req, res, next) => {
 
   getCategory(category)
     .then((response) => {
-      getAvg(category)
-        .then((result) => {
-          res.render('category', {
-            style: 'style',
-            style_special: 'category',
-            title: category,
-            response,
-            dom: 'categories',
-            isUser,
-            userName,
-            result,
-            isPerson,
-          });
-        })
-        .catch(error => next(error));
+      if (response.length === 0) {
+        res.render('category', {
+          messageError: 'Sorry No data available',
+          style: 'style',
+          style_special: 'category',
+          title: category,
+          isUser,
+          userName,
+          isPerson,
+        });
+      } else {
+        getAvg(category)
+          .then((result) => {
+            res.render('category', {
+              style: 'style',
+              style_special: 'category',
+              title: category,
+              response,
+              dom: 'categories',
+              isUser,
+              userName,
+              result,
+              isPerson,
+            });
+          })
+          .catch(error => next(error));
+      }
     })
     .catch(err => next(err));
 };
