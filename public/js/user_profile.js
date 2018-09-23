@@ -35,9 +35,13 @@ infoDiv.style.display = 'none';
 reviewsButton.addEventListener('click', () => {
   reviewsDiv.style.display = 'block';
   infoDiv.style.display = 'none';
+  reviewsButton.classList.add('tap');
+  infoButton.classList.remove('tap');
 });
 
 infoButton.addEventListener('click', () => {
   infoDiv.style.display = 'block';
   reviewsDiv.style.display = 'none';
+  infoButton.classList.add('tap');
+  reviewsButton.classList.remove('tap');
 });

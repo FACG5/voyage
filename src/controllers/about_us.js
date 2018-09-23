@@ -1,8 +1,13 @@
 exports.get = (req, res) => {
   let userName = '';
+  let isPerson = false;
   const { isUser } = req;
   if (isUser) {
     userName = req.data.name;
+    const { type } = req.data;
+    if (type === 'person') {
+      isPerson = true;
+    }
   }
   res.render('about_us', {
     style: 'style',
@@ -10,5 +15,6 @@ exports.get = (req, res) => {
     title: 'About Us',
     userName,
     isUser,
+    isPerson,
   });
 };

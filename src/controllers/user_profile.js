@@ -1,13 +1,24 @@
 const { getUserData } = require('../model/queries/users');
 const { getReviewByUser } = require('../model/queries/users');
 
-exports.get = (({ params: { username } }, res, next) => {
+exports.get = (req, res, next) => {
+  let userName = '';
+  let isPerson = false;
+  const { isUser } = req;
+  if (isUser) {
+    userName = req.data.name;
+    const { type } = req.data;
+    if (type === 'person') {
+      isPerson = true;
+    }
+  }
+  const { username } = req.params;
   getUserData(username)
     .then((response) => {
       if (response.length !== 0) {
         let img;
         const { gender } = response[0];
-        if (gender === 'femail') {
+        if (gender === 'female') {
           img = 'https://image.flaticon.com/icons/svg/145/145852.svg';
         } else {
           img = 'https://image.flaticon.com/icons/svg/145/145867.svg';
@@ -24,10 +35,13 @@ exports.get = (({ params: { username } }, res, next) => {
               img,
               username,
               result,
+              userName,
+              isUser,
+              isPerson,
             });
           })
           .catch(error => next(error));
-      }else {
+      } else {
         const message = 'Sorry User not Found !';
         res.render('user_profile', {
           style: 'style',
@@ -38,4 +52,4 @@ exports.get = (({ params: { username } }, res, next) => {
       }
     })
     .catch(error => next(error));
-});
+};

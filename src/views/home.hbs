@@ -3,34 +3,36 @@
   <div class="categoriesBtns">
     <button id="cafe" class="categories" type="button" >
         <img id="coffeeCup" src="./images/coffee-cup.svg" >
-        <div class="rgba"><p>coffee shops</p></div>
+        <p>coffee shops</p>
     </button>
     <button id="park" class="categories" type="button">
         <img  id="parks" src="./images/park.svg" >
-        <div class="rgba"><p>parks</p></div>
+        <p>parks</p>
     </button>
     <button id="restaurant" class="categories"  type="button" >
         <img  id="tray" src="./images/tray.svg" >
-        <div class="rgba"><p>restaurants</p></div>
+        <p>restaurants</p>
     </button>
   </div>
 </section>
 
 <section class="search-section">
-    <h2> <span class="fas fa-search "></span> Search about place</h2>
+    <h2> <span class="fas fa-search "></span> Search for place</h2>
     <form class="search-form" action="" method="get">
         <label for="search-input" >
             <input list="data" class="search-input" type="text" name="saerch" id="search" placeholder="Type here to search.." autocomplete="on">
         </label>
+        
         <datalist id="data" ></datalist>
     </form>
 </section>
 
 <div class="reviews-section">
+    <h2 class="review-title">latest users reviews</h2>
     <div class="review">
         {{#each response}}
             <div class="result">
-                <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" >{{username}}</a></h3>
+                <h3 class="user"> <a href="/user_profile/{{username}}" id="{{username}}" > by: {{username}}</a></h3>
                 <p class="evaluation-content">{{content}}</p>
                 <div class="review-footer">
                     <h3 class="business"><a href="/business?name={{name}}" >@ {{name}}</a></h3>
@@ -42,6 +44,10 @@
                         <li id="four-star" class="fa fa-star"></li>
                         <li id="five-star" class="fa fa-star"></li>
                     </ul>
+                    <button type="submit" id="{{id}}" class="button-comment fas fa-comment-alt"></button>
+                </div>
+                <div class="comments">
+                    <section class="comment-section"></section>
                 </div>
             </div>
         {{/each}}

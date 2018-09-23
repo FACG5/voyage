@@ -3,14 +3,27 @@ const { getReviews } = require('../model/queries/review');
 
 exports.get = (req, res, next) => {
   let userName = '';
+  let isPerson = false;
   const { isUser } = req;
   if (isUser) {
     userName = req.data.name;
+    const { type } = req.data;
+    if (type === 'person') {
+      isPerson = true;
+    }
   }
   getReviews()
-    .then((response) => {   
+    .then((response) => {
       res.render('home', {
-        style: 'style', style_special: 'home', title: 'Home', dom: 'home', isUser, userName, response,
+        style: 'style',
+        style_special: 'home',
+        title: 'Home',
+        dom: 'home',
+        comment: 'comment',
+        isUser,
+        userName,
+        isPerson,
+        response,
       });
     })
     .catch(err => next(err));

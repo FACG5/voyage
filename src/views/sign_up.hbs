@@ -1,14 +1,13 @@
 <div class="sign-up">
-    <h2 class="sign-up-title">Sign Up</h2>
+    <h2 class="sign-up-title"><span>Sign</span> Up</h2>
 
     <div class="switch">
-        <button id="person-btn" class="but-person" >Person</button>
-        <button id="business-btn" class="but-business" >Business</button>
+        <button id="person-btn" class="but-person btn-switch" >Person</button>
+        <button id="business-btn" class="but-business btn-switch" >Business</button>
     </div>
 
-    <!--<p class="message" >message{{message}}</p>-->
-
     <div  id="person-div" class="div-person" >
+        <h3 class="title">create account as a normal user</h3>
         <label for="email">
             <input type="email" id="person-email" placeholder="Email" required>
         </label>
@@ -34,18 +33,17 @@
             <input type="radio" id="female" name="gender" value="female"> Female
         </label>
         <br>
-
-        <p class="title-label"> Birth </p>
         <label for="birth">
-            <input type="date" id="birth" required>
+            <input type="date" placeholder="Birth of date" id="birth" required />
         </label>
 
         <p id="person-err" class="errorValid"></p>
 
-        <button type="submit" id="person-send">Send</button>
+        <button type="submit" class="btn-send" id="person-send">Send</button>
     </div>
 
     <div id="business-div" class="div-business"  style="display: none">
+        <h3 class="title">create account as a business</h3>
         <label for="email">
             <input type="email" id="business-email" placeholder="Email" required>
         </label>
@@ -77,11 +75,11 @@
           </select>
         </label>
 
-        <label for="image"> image :
-            <input type="url" id="image" required>
+        <label for="image">
+            <input type="url" placeholder=" image url :" id="image" required>
         </label>
         <p id="business-err" class="errorValid"></p>
 
-        <button type="submit" id="busines-send">Send</button>
+        <button type="submit" class="btn-send" id="busines-send">Send</button>
     </div>
 </div>

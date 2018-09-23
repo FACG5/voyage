@@ -1,5 +1,5 @@
-/* global document */
-/* global window */
+/* global document window fetch */
+
 const getElement = id => document.getElementById(id);
 
 const email = getElement('input-email');
@@ -27,7 +27,7 @@ sendButton.addEventListener('click', () => {
     fetch('/sign_in', {
       method: 'POST',
       credentials: 'same-origin',
-      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(object),
     })
       .then(response => response.json())

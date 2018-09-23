@@ -7,14 +7,18 @@
             <div id="sidebar">
                 <ul>
                     {{#if isUser}}
-                        <a href="#" class="sidebar-link"><span class="fas fa-user-circle"></span>{{userName}}</a>
+                        {{#if isPerson}}
+                            <a href="/user_profile/{{userName}}" class="sidebar-link"><span class="fas fa-user-circle"></span>{{userName}}</a>
+                        {{else}}
+                        <a href="/business?name={{userName}}" class="sidebar-link"><span class="fas fa-user-circle"></span>{{userName}}</a>
+                        {{/if}}
                         <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
-                        <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
+                        <a href="/about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
                         <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
                         <a href="/sign_out" class="sidebar-link"><li><span class="fas fa-sign-out-alt"></span>sign out</li></a>
                     {{else}}
                         <a href="/" class="sidebar-link"><li><span class="fas fa-search"></span>search</li></a>
-                        <a href="about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
+                        <a href="/about_us" class="sidebar-link"><li><span class="fas fa-question"></span> about us</li></a>
                         <a href="/contact_us" class="sidebar-link"><li><span class="fas fa-comment-alt"></span>contact us</li></a>
                         <a href="/sign_in" class="sidebar-link"><li><span class="fas fa-sign-in-alt"></span>sign in</li></a>
                         <a href="/sign_up" class="sidebar-link"><li><span  class="fas fa-user-plus"></span>sign up</li></a>
@@ -42,5 +46,4 @@
   ref.classList.toggle('active');
   document.getElementById('sidebar').classList.toggle('active');
 }
-
 </script>

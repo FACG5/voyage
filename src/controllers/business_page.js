@@ -1,6 +1,6 @@
 const { getSearchResult } = require('../model/queries/business');
 const { getReviewsByBusiness, setReview } = require('../model/queries/review');
-const { getPerson } = require('../model/queries/person');
+const { getPerson, personAlreadyReview } = require('../model/queries/person');
 
 exports.get = (req, res, next) => {
   let userName = '';
@@ -32,6 +32,7 @@ exports.get = (req, res, next) => {
                 isPerson,
                 responseReview,
                 avarage,
+                style_special: 'business_page',
                 style: 'style',
                 title: name,
                 dom: 'business_page',
@@ -48,6 +49,7 @@ exports.get = (req, res, next) => {
                 isUser,
                 isPerson,
                 avarage,
+                style_special: 'business_page',
                 style: 'style',
                 title: name,
                 dom: 'business_page',
@@ -86,9 +88,17 @@ exports.post = (req, res, next) => {
       getPerson(name)
         .then((responsePerson) => {
           const idPerson = responsePerson[0].id;
-          setReview(idPerson, idBusiness, text, parseInt(evaluation, 10))
-            .then((response) => {
-              res.send({ username: name });
+          personAlreadyReview(idBusiness, idPerson)
+            .then((resReview) => {
+              if (resReview.length !== 0) {
+                res.send({ err: 'The person already add the review' });
+              } else {
+                setReview(idPerson, idBusiness, text, parseInt(evaluation, 10))
+                  .then((response) => {
+                    res.send({ username: name });
+                  })
+                  .catch(err => next(err));
+              }
             })
             .catch(err => next(err));
         })
